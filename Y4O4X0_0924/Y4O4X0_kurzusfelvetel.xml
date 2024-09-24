@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE Y4O4X0_kurzusfelvetel [
+    <!ELEMENT Y4O4X0_kurzusfelvetel (hallgato, kurzusok)>
+    <!ELEMENT hallgato (hnev, szulev, szak)>
+]>
+
+<Y4O4X0_kurzusfelvetel tanev="2024/25" egyetem="Miskolci Egyetem">
+    <hallgato>
+        <hnev>Szalóczy Krisztián</hnev>
+        <szulev>2002.06.07</szulev>
+        <szak evf="2022">Mérnökinformatika</szak>
+    </hallgato>
+    <kurzusok>
+        <kurzus id="Y4O4X0">
+            <kurzusnev id="k1" jovahagyas="igen" nyelv="magyar">Webes adatkezelő környezetek</kurzusnev>
+            <kredit>5</kredit>
+            <hely>
+                Inf/103
+                
+            </hely>
+            <oraado>Dr Bednarik László</oraado>
+            <idopont>Kedd 12:00 - 14:00</idopont>
+            <oktato id="okt1" jovahagyas="igen" nyelv="magyar"></oktato>
+        </kurzus>
+        <kurzus id="Y4O4X0">
+            <kurzusnev id="k1" jovahagyas="igen" nyelv="magyar">Webes adatkezelő környezetek</kurzusnev>
+            <kredit>5</kredit>
+            <hely>Inf/103</hely>
+            <oraado>Dr Bednarik László</oraado>
+            <idopont>Kedd 12:00 - 14:00</idopont>
+            <oktato id="okt1" jovahagyas="igen" nyelv="magyar"></oktato>
+        </kurzus>
+    </kurzusok>
+</Y4O4X0_kurzusfelvetel>
