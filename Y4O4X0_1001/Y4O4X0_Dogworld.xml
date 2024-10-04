@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<konyvek>
+<konyvek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="SZK_DogWorld1.xsd">
 <konyv isbn="0836217462">
     <cim>DogWorld</cim>
     <szerzo>Charles M. Schulz</szerzo>
@@ -13,8 +14,8 @@
 
     <szereplo>
         <nev>Patty</nev>
-        <szuletet>2011-08-22</szuletet>
-        <jellmezese>vakmerő, leány</jellmezese>
+        <szuletett>2011-08-22</szuletett>
+        <jellemzese>vakmerő, leány</jellemzese>
     </szereplo>
 </konyv>
 </konyvek>

@@ -22,15 +22,15 @@
                         <xs:element name="szereplo" minOccurs="0" maxOccurs="20">
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="nev" type="xs:string"></xs:element>
-                                    <xs:element name="baratja" type="xs:string" minOccurs="0" maxOccurs="5"></xs:element>
-                                    <xs:element name="szuletett" type="xs:string"></xs:element>
-                                    <xs:element name="jellemzese" type="xs:string"></xs:element>
+                                    <xs:element ref="nev"></xs:element>
+                                    <xs:element ref="baratja" minOccurs="0" maxOccurs="5"></xs:element>
+                                    <xs:element ref="szuletett"></xs:element>
+                                    <xs:element ref="jellemzese"></xs:element>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
-                    <xs:attribute name="isbn" type="xs:string"></xs:attribute>
+                    <xs:attribute ref="isbn"></xs:attribute>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
