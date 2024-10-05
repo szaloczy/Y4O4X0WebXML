@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- <!DOCTYPE Y4O4X0_kurzusfelvetel SYSTEM "Y4O4X0_kurzusfelvetel.dtd"> -->
-
-
-<!DOCTYPE Y4O4X0_kurzusfelvetel [
-    <!ELEMENT Y4O4X0_kurzusfelvetel (hallgato, kurzusok)>
-    <!ELEMENT hallgato (hnev+, szulev+, szak+)>
-    <!ELEMENT hnev (#PCDATA)>
-    <!ELEMENT szulev (#PCDATA)>
-    <!ELEMENT szak (#PCDATA)>
-    <!ELEMENT kurzusok (kurzus*)>
-    <!ELEMENT kurzus (kurzusnev+, kredit+, hely+, oraado?, idopont+, oktato?)>
-    <!ELEMENT kurzusnev (#PCDATA)>
-    <!ELEMENT kredit (#PCDATA)>
-    <!ELEMENT hely (#PCDATA)>
-    <!ELEMENT oraado (#PCDATA)>
-    <!ELEMENT idopont (#PCDATA)>
-    <!ELEMENT oktato (#PCDATA)>
-
-    <!ATTLIST Y4O4X0_kurzusfelvetel tanev CDATA #REQUIRED>
-    <!ATTLIST Y4O4X0_kurzusfelvetel egyetem CDATA #REQUIRED>
-    <!ATTLIST szak evf CDATA #REQUIRED>
-    <!ATTLIST kurzus id CDATA #REQUIRED>
-    <!ATTLIST kurzusnev id CDATA #REQUIRED>
-    <!ATTLIST kurzusnev jovahagyas (igen | nem) #REQUIRED>
-    <!ATTLIST kurzusnev nyelv CDATA #REQUIRED>
-    <!ATTLIST oktato id CDATA #REQUIRED>
-    <!ATTLIST oktato jovahagyas (igen | nem) "nem">
-    <!ATTLIST oktato nyelv CDATA #REQUIRED>
-]>
-
-<Y4O4X0_kurzusfelvetel tanev="2024/25" egyetem="Miskolci Egyetem">
+<Y4O4X0_kurzusfelvetel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="Y4O4X0_kurzusfelvetel.xsd" tanev="2024/25" egyetem="Miskolci Egyetem">
     <hallgato>
         <hnev>Szalóczy Krisztián</hnev>
         <szulev>2002.06.07</szulev>
@@ -48,7 +19,7 @@
             <oktato id="okt1" jovahagyas="igen" nyelv="magyar">Szabó Nórbert</oktato>
         </kurzus>
         <kurzus id="GEIAL331-BL2">
-            <kurzusnev id="k1" jovahagyas="igen" nyelv="magyar">Web technológiák I</kurzusnev>
+            <kurzusnev id="k1" jovahagyas="nem" nyelv="magyar">Web technológiák I</kurzusnev>
             <kredit>5</kredit>
             <hely>
                 A2/I előadó
@@ -63,6 +34,7 @@
             <hely>
                 A2/223 
             </hely>
+            <oraado>Dorkó Dóra</oraado>
             <idopont>Hétfő 12:00 - 14:00</idopont>
             <oktato id="okt1" jovahagyas="igen" nyelv="magyar"></oktato>
         </kurzus>
@@ -82,6 +54,7 @@
             <hely>
                 Inf/103 
             </hely>
+            <oraado>Agárdi Anita</oraado>
             <idopont>Hétfő 16:00 - 18:00</idopont>
             <oktato id="okt1" jovahagyas="igen" nyelv="magyar">Agárdi Anita</oktato>
         </kurzus>
