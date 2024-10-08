@@ -8,6 +8,13 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="tipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="elmelet"></xs:enumeration>
+            <xs:enumeration value="gyakorlat"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:simpleType name="egyetemTipus">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"></xs:minLength>

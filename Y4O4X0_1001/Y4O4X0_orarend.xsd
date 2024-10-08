@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="targy" type="xs:string"></xs:element>
+    <xs:element name="nap" type="xs:string"></xs:element>
+    <xs:element name="tol" type="xs:string"></xs:element>
+    <xs:element name="ig" type="xs:string"></xs:element>
+    <xs:element name="helyszin" type="xs:string"></xs:element>
+    <xs:element name="oktato" type="xs:string"></xs:element>
+    <xs:element name="szak" type="xs:string"></xs:element>
+    <xs:attribute name="id" type="xs:string"></xs:attribute>
+    <xs:attribute name="tipus" type="xs:string"></xs:attribute>
+
+    <xs:element name="SZK_rarend">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ora">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="targy" ></xs:element>
+                            <xs:element name="idopont">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element ref="nap"></xs:element>
+                                        <xs:element ref="tol"></xs:element>
+                                        <xs:element ref="ig"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element ref="helyszin"></xs:element>
+                            <xs:element ref="oktato"></xs:element>
+                            <xs:element ref="szak"></xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="id"></xs:attribute>
+                        <xs:attribute ref="tipus"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
