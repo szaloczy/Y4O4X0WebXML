@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Vendeglatas>
+    <Etterem Ekod="E1">
+        <Csillag></Csillag>
+        <Cim>
+            <Varos></Varos>
+            <Utca></Utca>
+            <Hazszam></Hazszam>
+        </Cim>
+        <Nev></Nev>
+        <Foszakacs Fkod="F1">
+            <Nev></Nev>
+            <Eletkor></Eletkor>
+            <Vegzettseg></Vegzettseg>
+        </Foszakacs>
+        <Szakacs Szkod="Sz1">
+            <Nev></Nev>
+            <Reszleg></Reszleg>
+            <Vegzettseg></Vegzettseg>
+        </Szakacs>
+        <Gyakornok Gykod="Gy1">
+            <Nev></Nev>
+            <Gyakorlat>
+                <Kezdet></Kezdet>
+                <Idotartam></Idotartam>
+            </Gyakorlat>
+            <Muszak></Muszak>
+        </Gyakornok>
+        <Vendeg Vkod="V1">
+            <Nev></Nev>
+            <Eletkor></Eletkor>
+            <Cim>
+                <Varos></Varos>
+                <Utca></Utca>
+                <Hazszam></Hazszam>
+            </Cim>
+        </Vendeg>
+        <Rendeles Rkod="R1" EVRkod="EVR1">
+            <Osszeg></Osszeg>
+            <Etel></Etel>
+        </Rendeles>
+    </Etterem>
+</Vendeglatas>
