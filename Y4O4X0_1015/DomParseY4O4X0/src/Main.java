@@ -7,6 +7,18 @@ import org.w3c.dom.NodeList;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+/*
+ Feldolgozni kell - az orán vett metódusok felhasznalasaval 
+
+ gyökér eleme
+ végig kiiratatni a csomoópontokat 
+ csomopontok letrehozása 
+
+ DOM read- feldolgozni
+ */
+
+
         String path = "src/resources/Y4O4X0_orarend.xml";
 
         DOMRead dm = new DOMRead(path);
