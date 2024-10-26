@@ -1,41 +1,98 @@
 package domy4o4x01015;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+
 
 public class DOMRead {
 
-    private String path;
-
-    public DOMRead(String path) {
-        this.path = path;
+    public static void main(String[] args) {
+        try {
+            File xmlFile = new File("src/resources/Y4O4X0_orarend.xml");
+            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc = builder.parse(xmlFile);
+            
+            doc.getDocumentElement().normalize();
+            NodeList oraList = doc.getElementsByTagName("ora");
+            for (int i = 0 ; i < oraList.getLength(); i++) {
+                Node oraNode = oraList.item(i);
+                
+                if (oraNode.getNodeType() == Node.ELEMENT_NODE) {
+                    printOraDetails((Element) oraNode);
+                    System.out.println();
+                }
+            } 
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    public Document buildUpDom() throws Exception {
-        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        Document dom = builder.parse(new File(path));
-        dom.getDocumentElement().normalize();
+    private static void printOraDetails(Element oraNode) {
+        System.out.println("ID: " + oraNode.getAttribute("id"));
+        System.out.println("Tipus: " + oraNode.getAttribute("tipus"));
 
-        return dom;
+        printTargy(oraNode);
+        printIdopont(oraNode);
+        printHelyszin(oraNode);
+        printOktato(oraNode);
+        printSzak(oraNode);
     }
 
-    public void query(Document dom) {
-        NodeList classList = dom.getElementsByTagName("ora");
-        for(int i = 0; i < classList.getLength(); i++) {
-            Node node = classList.item(i);
-            NodeList childList = node.getChildNodes();
+    private static void printSzak(Element oraNode){
+        NodeList szakList = oraNode.getElementsByTagName("szak");
+        for (int i = 0; i <szakList.getLength(); i++) {
+            Node szakNode = szakList.item(i);
+            if (szakNode.getNodeType() == Node.ELEMENT_NODE) {
+                System.out.println("Szak: " + szakNode.getTextContent());
+            }
+        }
+    }
 
-            for(int j = 0; j < childList.getLength(); j++){
-                Node child = childList.item(j);
+    private static void printOktato(Element oraNode) {
+        NodeList oktatoList = oraNode.getElementsByTagName("oktato");
+        for (int i = 0; i < oktatoList.getLength(); i++) {
+            Node oktatoNode = oktatoList.item(i);
+            if (oktatoNode.getNodeType() == Node.ELEMENT_NODE) {
+                System.out.println("Oktató: " + oktatoNode.getTextContent());
+            }
+        }
+    }
 
-                if (child.getNodeType() == Node.ELEMENT_NODE){
-                    System.out.println(child.getNodeName() + " : " + child.getTextContent());
+    private static void printHelyszin(Element oraNode) {
+        NodeList helyszinList = oraNode.getElementsByTagName("helyszin");
+        for (int i = 0; i < helyszinList.getLength(); i++) {
+            Node helyszinNode = helyszinList.item(i);
+            if (helyszinNode.getNodeType() == Node.ELEMENT_NODE) {
+                System.out.println("Helyszín: " + helyszinNode.getTextContent());
+            }
+        }
+    }
+
+    private static void printTargy(Element oraNode) {
+        NodeList targyList = oraNode.getElementsByTagName("targy");
+        for (int i = 0 ; i < targyList.getLength(); i++) {
+            Node targyNode = targyList.item(i);
+            if (targyNode.getNodeType() == Node.ELEMENT_NODE) {
+                System.out.println("Tárgy: " + targyNode.getTextContent());
+            }
+        }
+    }
+
+    private static void printIdopont(Element oraNode) {
+        NodeList idopontList = oraNode.getElementsByTagName("idopont");
+        for (int i = 0; i < idopontList.getLength(); i++) {
+            System.out.print("Idopont: ");
+            NodeList idopontChildList = idopontList.item(i).getChildNodes();
+            for (int j = 0; j < idopontChildList.getLength(); j++) {
+                Node idopontChildNode = idopontChildList.item(j);
+                if (idopontChildNode.getNodeType() == Node.ELEMENT_NODE) {
+                    System.out.print(idopontChildNode.getTextContent() + " ");
                 }
             }
             System.out.println();
