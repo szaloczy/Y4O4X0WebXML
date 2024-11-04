@@ -16,53 +16,77 @@ import java.io.File;
 
 public class DomWriteY4O4X0 {
 
-    public static void main(String[] args) {
-            String inputFilePath = "src/resources/Y4O4X0_orarend.xml";
-            String outputFilePath = "src/resources/Y4O4X0_orarend1.xml";
-            try {
-                Document document = parseXmlFile(inputFilePath);
-                writeDocumentToFile(document, outputFilePath);
-                printXmlStructure(document.getDocumentElement(), " ");
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-    }
+    public static void main(String[] args) throws Exception {
+        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+        Document doc = builder.newDocument();
 
-    private static void writeDocumentToFile(Document document, String filePath) throws Exception{
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
+        Element root = doc.createElementNS("DOMY4O4X0", "SZK_orarend");
+        doc.appendChild(root);
+
+        root.appendChild(createOra(doc,
+                "o1",
+                "elmelet",
+                "Elektrotechnika és elektronika",
+                "Hétfő",
+                "8:00",
+                "10:00",
+                "A2/III. Előadó",
+                "Szabó Nórbert",
+                "Mérnökinformatika BSc"));
+
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-        DOMSource source = new DOMSource(document);
-        StreamResult outFile = new StreamResult(new File(filePath));
-        transformer.transform(source, outFile);
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+
+        DOMSource source = new DOMSource(doc);
+        File myFile = new File("src/resourcesY4O4X0_orarend1.xml");
+
+        StreamResult console = new StreamResult(System.out);
+        StreamResult file = new StreamResult(myFile);
+
+        transformer.transform(source,console);
+        transformer.transform(source,file);
     }
 
-    private static Document parseXmlFile(String filePath) {
-        try {
-            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document doc = builder.parse(new File(filePath));
-            return builder.parse(new File(filePath));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
+    private static Node createOra(Document doc,
+                                  String id,
+                                  String tipus,
+                                  String targy,
+                                  String nap,
+                                  String tol,
+                                  String ig,
+                                  String helyszin,
+                                  String oktato,
+                                  String szak) {
+
+        Element ora = doc.createElement("ora");
+
+        ora.setAttribute("id", id);
+        ora.setAttribute("tipus", tipus);
+        ora.appendChild(createElement(doc, "targy", targy));
+        ora.appendChild(createIdopontElement(doc,nap,tol,ig));
+        ora.appendChild(createElement(doc, "helyszin", helyszin));
+        ora.appendChild(createElement(doc, "oktato", oktato));
+        ora.appendChild(createElement(doc, "szak", szak));
+
+        return ora;
     }
 
-    private static void printXmlStructure(Element element, String indent) {
-        System.out.println("<" + element.getNodeName()+">");
-            NodeList nodeList = element.getChildNodes();
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                Node node = nodeList.item(i);
-                if (node.getNodeType() == Node.ELEMENT_NODE) {
-                    printXmlStructure((Element) node, indent + "  ");
-                } else if (node.getNodeType() == Node.TEXT_NODE) {
-                    String content = node.getNodeValue().trim();
-                      if (content.length() > 0) {
-                          System.out.println(indent + content);
-                      }
-                }
-            }
-        System.out.println("</" + element.getNodeName()+">");
+    private static Node createElement(Document doc, String name, String value) {
+        Element node = doc.createElement(name);
+        node.appendChild(doc.createTextNode(value));
+
+        return node;
     }
 
+    private static Node createIdopontElement(Document doc, String nap, String tol, String ig){
+        Element idopont = doc.createElement("idopont");
+
+        idopont.appendChild(createElement(doc, "nap", nap));
+        idopont.appendChild(createElement(doc, "tol", tol));
+        idopont.appendChild(createElement(doc, "ig", ig));
+
+        return idopont;
+    }
 }

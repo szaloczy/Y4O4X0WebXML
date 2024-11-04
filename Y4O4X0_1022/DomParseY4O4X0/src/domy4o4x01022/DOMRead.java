@@ -4,71 +4,54 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import javax.print.Doc;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.IOException;
 
 public class DOMRead {
 
-    public static void main(String[] args) {
-        try {
-            File xmlFile = new File("src/resources/hallgatoY4O4X0.xml");
-            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document dom = builder.parse(xmlFile);
+    public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException {
+        File xmlFile = new File("src/resources/hallgatoY4O4X0.xml");;
 
-            dom.getDocumentElement().normalize();
-            NodeList hallgatoList= dom.getElementsByTagName("hallgato");
+        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+        Document doc = builder.parse(xmlFile);
 
-            for (int i = 0; i < hallgatoList.getLength(); i++) {
-                Node hallgatoNode = hallgatoList.item(i);
-                if (hallgatoNode.getNodeType() == Node.ELEMENT_NODE) {
-                    printHallgatoDetails((Element) hallgatoNode);
-                    System.out.println();
-                }
-            }
+        doc.getDocumentElement().normalize();
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
+        System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
 
-    private static void printHallgatoDetails(Element hallgatoNode) {
-        System.out.println("Hallgato ID: " + hallgatoNode.getAttribute("id"));
+        NodeList nodeList = doc.getElementsByTagName("hallgato");
 
-        printKeresztnev(hallgatoNode);
-        printVezeteknev(hallgatoNode);
-        printFoglalkozas(hallgatoNode);
-    }
+        for(int i = 0; i < nodeList.getLength(); i++) {
+            Node node = nodeList.item(i);
 
-    private static void printKeresztnev(Element hallgatoNode) {
-        NodeList keresztnevList = hallgatoNode.getElementsByTagName("keresztnev");
-        for (int i = 0; i < keresztnevList.getLength(); i++) {
-            Node keresztnevNode = keresztnevList.item(i);
-            if (keresztnevNode.getNodeType() == Node.ELEMENT_NODE) {
-                System.out.println("Keresztnev: " + keresztnevNode.getTextContent());
-            }
-        }
-    }
+            System.out.println("\nCurrent Element: " + node.getNodeName());
 
-    private static void printVezeteknev(Element hallgatoNode) {
-        NodeList vezeteknevList = hallgatoNode.getElementsByTagName("vezeteknev");
-        for (int i = 0; i < vezeteknevList.getLength(); i++) {
-            Node vezeteknevNode = vezeteknevList.item(i);
-            if(vezeteknevNode.getNodeType() == Node.ELEMENT_NODE) {
-                System.out.println("Vezeteknev: " + vezeteknevNode.getTextContent());
+            if(node.getNodeType() == Node.ELEMENT_NODE) {
+                Element element = (Element) node;
+
+                String uid = element.getAttribute("id");
+
+                Node node1 = element.getElementsByTagName("vezeteknev").item(0);
+                String fname = node1.getTextContent();
+
+                Node node2 = element.getElementsByTagName("keresztnev").item(0);
+                String lname = node2.getTextContent();
+
+                Node node3 = element.getElementsByTagName("foglalkozas").item(0);
+                String profession = node3.getTextContent();
+
+                System.out.println("UID: " + uid);
+                System.out.println("First name: " + fname);
+                System.out.println("Last name " + lname);
+                System.out.println("Profession " + profession);
             }
         }
-    }
 
-    private static void printFoglalkozas(Element hallgatoNode) {
-        NodeList foglalkozasList = hallgatoNode.getElementsByTagName("foglalkozas");
-        for (int i = 0; i < foglalkozasList.getLength(); i++) {
-            Node foglalkozasNode = foglalkozasList.item(i);
-            if(foglalkozasNode.getNodeType() == Node.ELEMENT_NODE) {
-                System.out.println("Foglalkozas: " + foglalkozasNode.getTextContent());
-            }
-        }
     }
 }
