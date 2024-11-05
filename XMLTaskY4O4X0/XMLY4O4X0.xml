@@ -15,7 +15,7 @@
                 <belepesiDatum>2006-02-02</belepesiDatum>
                 <csapattag cstkod="cst1">
                     <munkaido>8</munkaido>
-                    <pozicio>szoftverfejlesztő</pozicio>
+                    <pozicio>Szoftverfejlesztő</pozicio>
                 </csapattag>
             </dolgozo>
             <dolgozo dkod="d2">
@@ -24,7 +24,7 @@
                 <belepesiDatum>2010-01-21</belepesiDatum>
                 <csapattag cstkod="cst2">
                     <munkaido>8</munkaido>
-                    <pozicio>Tesztelő mérnök</pozicio>
+                    <pozicio>Tesztelő</pozicio>
                 </csapattag>
             </dolgozo>
             <dolgozo dkod="d3">
@@ -33,7 +33,7 @@
                 <belepesiDatum>2000-03-03</belepesiDatum>
                 <csapattag cstkod="cst3">
                     <munkaido>8</munkaido>
-                    <pozicio></pozicio>
+                    <pozicio>Tesztelő</pozicio>
                 </csapattag>
             </dolgozo>
         </csapat>
@@ -61,7 +61,7 @@
                 <belepesiDatum>2011-11-10</belepesiDatum>
                 <csapattag cstkod="cs1">
                     <munkaido>8</munkaido>
-                    <pozicio></pozicio>
+                    <pozicio>Szoftverfejlesztő</pozicio>
                 </csapattag>
             </dolgozo>
         </csapat>
@@ -78,75 +78,75 @@
                 <utca></utca>
                 <hazszam></hazszam>
             </cim>
-            <email></email>
+            <email>abdc@gmail.com</email>
         </ugyfel>
     </reszleg>
     <reszleg rkod="r2">
         <nev></nev>
-        <emelet></emelet>
-        <letszam></letszam>
+        <emelet>4</emelet>
+        <letszam>31</letszam>
         <csapat cskod="cs1">
             <vezeto></vezeto>
-            <letszam></letszam>
-            <elorehaladas></elorehaladas>
+            <letszam>22</letszam>
+            <elorehaladas>32</elorehaladas>
             <dolgozo dkod="d1">
-                <fizetes></fizetes>
+                <fizetes>2000000</fizetes>
                 <vegzettseg></vegzettseg>
-                <belepesiDatum></belepesiDatum>
+                <belepesiDatum>2009-10-22</belepesiDatum>
                 <csapattag cstkod="cs1">
-                    <munkaido></munkaido>
-                    <pozicio></pozicio>
+                    <munkaido>8</munkaido>
+                    <pozicio>Projekt menedzser</pozicio>
                 </csapattag>
             </dolgozo>
         </csapat>
         <projekt pkod="p1">
             <nev></nev>
             <felelos></felelos>
-            <hatarido></hatarido>
+            <hatarido>2024-01-11</hatarido>
         </projekt>
         <ugyfel ukod="u1">
             <nev></nev>
-            <adoszam></adoszam>
+            <adoszam>23432322-2-23</adoszam>
             <cim>
                 <varos></varos>
                 <utca></utca>
                 <hazszam></hazszam>
             </cim>
-            <email></email>
+            <email>exampl@gmail.com</email>
         </ugyfel>
     </reszleg>
     <reszleg rkod="r3">
         <nev></nev>
-        <emelet></emelet>
-        <letszam></letszam>
+        <emelet>2</emelet>
+        <letszam>22</letszam>
         <csapat cskod="cs1">
             <vezeto></vezeto>
-            <letszam></letszam>
-            <elorehaladas></elorehaladas>
+            <letszam>10</letszam>
+            <elorehaladas>24</elorehaladas>
             <dolgozo dkod="d1">
-                <fizetes></fizetes>
+                <fizetes>320000</fizetes>
                 <vegzettseg></vegzettseg>
-                <belepesiDatum></belepesiDatum>
+                <belepesiDatum>2000-05-24</belepesiDatum>
                 <csapattag cstkod="cs1">
-                    <munkaido></munkaido>
-                    <pozicio></pozicio>
+                    <munkaido>8</munkaido>
+                    <pozicio>Tesztelő</pozicio>
                 </csapattag>
             </dolgozo>
         </csapat>
         <projekt pkod="p1">
             <nev></nev>
             <felelos></felelos>
-            <hatarido></hatarido>
+            <hatarido>2024-02-02</hatarido>
         </projekt>
         <ugyfel ukod="u1">
             <nev></nev>
-            <adoszam></adoszam>
+            <adoszam>13425434-3-22</adoszam>
             <cim>
                 <varos></varos>
                 <utca></utca>
                 <hazszam></hazszam>
             </cim>
-            <email></email>
+            <email>dcba@gmail.com</email>
         </ugyfel>
     </reszleg>
 </vallalat>

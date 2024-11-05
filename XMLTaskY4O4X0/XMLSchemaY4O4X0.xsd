@@ -25,11 +25,26 @@
             </xs:restriction>
         </xs:simpleType>
 
+        <xs:simpleType name="pozicioTipus">
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Szoftverfejlesztő"></xs:enumeration>
+                <xs:enumeration value="Projekt menedzser"></xs:enumeration>
+                <xs:enumeration value="Tesztelő"></xs:enumeration>
+            </xs:restriction>
+        </xs:simpleType>
+
         <xs:simpleType name="elorehaladasTipus">
                 <xs:restriction base="xs:int">
                     <xs:minExclusive value="0"></xs:minExclusive>
                     <xs:maxExclusive value="100"></xs:maxExclusive>
                 </xs:restriction>
+        </xs:simpleType>
+
+        <xs:simpleType name="emeletTipus">
+            <xs:restriction base="xs:int">
+                <xs:minExclusive value="1"></xs:minExclusive>
+                <xs:maxExclusive value="6"></xs:maxExclusive>
+            </xs:restriction>
         </xs:simpleType>
 
         <xs:complexType name="cimTipus">
@@ -46,8 +61,8 @@
                 <xs:element name="adoszam" type="adoszamTipus"></xs:element>
                 <xs:element name="cim" type="cimTipus"></xs:element>
                 <xs:element name="email" type="emailTipus"></xs:element>
-            
             </xs:sequence>
+            <xs:attribute name="ukod"></xs:attribute>
         </xs:complexType>
 
         <xs:complexType name="projektTipus">
@@ -62,7 +77,7 @@
         <xs:complexType name="csapattagTipus">
             <xs:sequence>
                 <xs:element name="munkaido" type="xs:int"></xs:element>
-                <xs:element name="pozicio" type="xs:string"></xs:element>
+                <xs:element name="pozicio" type="pozicioTipus"></xs:element>
             </xs:sequence>
             <xs:attribute name="cstkod" type="xs:string"></xs:attribute>
         </xs:complexType>
@@ -91,7 +106,7 @@
         <xs:complexType mixed="true">
             <xs:sequence>
                 <xs:element name="nev" type="xs:string"></xs:element>
-                <xs:element name="emelet" type="xs:int"></xs:element>
+                <xs:element name="emelet" type="emeletTipus"></xs:element>
                 <xs:element name="letszam" type="xs:int"></xs:element>
                 <xs:element name="csapat" type="csapatTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
                 <xs:element name="projekt" type="projektTipus"></xs:element>
