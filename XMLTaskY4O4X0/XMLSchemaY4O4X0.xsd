@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+        <xs:simpleType name="emailTipus">
+            <xs:restriction base="xs:string">
+                <!--regex az adószámra: 
+                [0-9]{8}: Pontosan 8 számjegy.
+                -: Egy kötőjel.
+                [0-9]{1}: Pontosan 1 számjegy.
+                -: Egy kötőjel.
+                [0-9]{2}: Pontosan 2 számjegy.-->
+                <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"></xs:pattern>
+            </xs:restriction>
+        </xs:simpleType>
+
+        <xs:simpleType name="adoszamTipus">
+            <xs:restriction base="xs:string">
+                <!--regex az adószámra: 
+                [0-9]{8}: Pontosan 8 számjegy.
+                -: Egy kötőjel.
+                [0-9]{1}: Pontosan 1 számjegy.
+                -: Egy kötőjel.
+                [0-9]{2}: Pontosan 2 számjegy.-->
+                <xs:pattern value="[0-9]{8}-[0-9]{1}-[0-9]{2}"></xs:pattern>
+            </xs:restriction>
+        </xs:simpleType>
+
+        <xs:simpleType name="elorehaladasTipus">
+                <xs:restriction base="xs:int">
+                    <xs:minExclusive value="0"></xs:minExclusive>
+                    <xs:maxExclusive value="100"></xs:maxExclusive>
+                </xs:restriction>
+        </xs:simpleType>
+
+        <xs:complexType name="cimTipus">
+            <xs:sequence>
+                <xs:element name="varos"></xs:element>
+                <xs:element name="utca"></xs:element>
+                <xs:element name="hazszam"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="ugyfelTipus">
+            <xs:sequence>
+                <xs:element name="nev" type="xs:string"></xs:element>
+                <xs:element name="adoszam" type="adoszamTipus"></xs:element>
+                <xs:element name="cim" type="cimTipus"></xs:element>
+                <xs:element name="email" type="emailTipus"></xs:element>
+            
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="projektTipus">
+            <xs:sequence>
+                <xs:element name="nev" type="xs:string"></xs:element>
+                <xs:element name="felelos" type="xs:string"></xs:element>
+                <xs:element name="hatarido" type="xs:date"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="pkod" type="xs:string"></xs:attribute>
+        </xs:complexType>
+
+        <xs:complexType name="csapattagTipus">
+            <xs:sequence>
+                <xs:element name="munkaido" type="xs:int"></xs:element>
+                <xs:element name="pozicio" type="xs:string"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="cstkod" type="xs:string"></xs:attribute>
+        </xs:complexType>
+
+        <xs:complexType name="dolgozoTipus" mixed="true">
+            <xs:sequence>
+                <xs:element name="fizetes" type="xs:int"></xs:element>
+                <xs:element name="vegzettseg" type="xs:string"></xs:element>
+                <xs:element name="belepesiDatum" type="xs:date"></xs:element>
+                <xs:element name="csapattag" type="csapattagTipus"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="dkod" type="xs:string"></xs:attribute>
+        </xs:complexType>
+    
+        <xs:complexType name="csapatTipus" mixed="true">
+            <xs:sequence>
+                <xs:element name="vezeto" type="xs:string"></xs:element>
+                <xs:element name="letszam" type="xs:int"></xs:element>
+                <xs:element name="elorehaladas" type="elorehaladasTipus"></xs:element>
+                <xs:element name="dolgozo" type="dolgozoTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="cskod" type="xs:string"></xs:attribute>
+        </xs:complexType>
+ 
+    <xs:element name="reszleg">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element name="nev" type="xs:string"></xs:element>
+                <xs:element name="emelet" type="xs:int"></xs:element>
+                <xs:element name="letszam" type="xs:int"></xs:element>
+                <xs:element name="csapat" type="csapatTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="projekt" type="projektTipus"></xs:element>
+                <xs:element name="ugyfel" type="ugyfelTipus"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="rkod" type="xs:string"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Vállalat gyökérelem (globális)-->
+    <xs:element name="vallalat">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="reszleg" minOccurs="1" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

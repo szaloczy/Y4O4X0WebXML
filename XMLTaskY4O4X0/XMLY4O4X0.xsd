@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.w3c.org/2001/XMLSchema-instance">
+    <xs:element name="vallalat">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="reszleg" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nev" />
+                            <xs:element name="emelet" />
+                            <xs:element name="letszam" />
+                            <xs:element name="csapat" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="vezeto" />
+                                        <xs:element name="letszam" />
+                                        <xs:element name="elorehaladas" />
+                                        <xs:element name="dolgozo" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="fizetes" />
+                                                    <xs:element name="vegzettseg" />
+                                                    <xs:element name="belepesiDatum" />
+                                                    <xs:element name="csapattag">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="munkaido" />
+                                                                <xs:element name="pozicio" />
+                                                            </xs:sequence>
+                                                            <xs:attribute name="cstkod"
+                                                                use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="dkod" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="cskod" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="projekt">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nev" />
+                                        <xs:element name="felelos" />
+                                        <xs:element name="hatarido" />
+                                    </xs:sequence>
+                                    <xs:attribute name="pkod" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ugyfel">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nev" />
+                                        <xs:element name="adoszam" />
+                                        <xs:element name="cim">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="varos" />
+                                                    <xs:element name="utca" />
+                                                    <xs:element name="hazszam" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="email" />
+                                    </xs:sequence>
+                                    <xs:attribute name="ukod" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="rkod" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

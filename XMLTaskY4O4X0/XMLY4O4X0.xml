@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<vallalat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="XMLSchemaY4O4X0.xsd">
+    <reszleg rkod="r1">
+        <nev>Elektronika</nev>
+        <emelet>2</emelet>
+        <letszam>12</letszam>
+        <csapat cskod="cs1">
+            <vezeto>Szabó Ernő</vezeto>
+            <letszam>8</letszam>
+            <elorehaladas>30</elorehaladas>
+            <dolgozo dkod="d1">
+                <fizetes>3000000</fizetes>
+                <vegzettseg>Bsc diploma</vegzettseg>
+                <belepesiDatum>2006-02-02</belepesiDatum>
+                <csapattag cstkod="cst1">
+                    <munkaido>8</munkaido>
+                    <pozicio>szoftverfejlesztő</pozicio>
+                </csapattag>
+            </dolgozo>
+            <dolgozo dkod="d2">
+                <fizetes>2000</fizetes>
+                <vegzettseg></vegzettseg>
+                <belepesiDatum>2010-01-21</belepesiDatum>
+                <csapattag cstkod="cst2">
+                    <munkaido>8</munkaido>
+                    <pozicio>Tesztelő mérnök</pozicio>
+                </csapattag>
+            </dolgozo>
+            <dolgozo dkod="d3">
+                <fizetes>300000</fizetes>
+                <vegzettseg>Bsc diploma</vegzettseg>
+                <belepesiDatum>2000-03-03</belepesiDatum>
+                <csapattag cstkod="cst3">
+                    <munkaido>8</munkaido>
+                    <pozicio></pozicio>
+                </csapattag>
+            </dolgozo>
+        </csapat>
+        <csapat cskod="cs2">
+            <vezeto></vezeto>
+            <letszam>43</letszam>
+            <elorehaladas>75</elorehaladas>
+            <dolgozo dkod="d1">
+                <fizetes>242000</fizetes>
+                <vegzettseg>Msc diploma</vegzettseg>
+                <belepesiDatum>2017-03-08</belepesiDatum>
+                <csapattag cstkod="cs1">
+                    <munkaido>8</munkaido>
+                    <pozicio>Projekt menedzser</pozicio>
+                </csapattag>
+            </dolgozo>
+        </csapat>
+        <csapat cskod="cs3">
+            <vezeto></vezeto>
+            <letszam>15</letszam>
+            <elorehaladas>45</elorehaladas>
+            <dolgozo dkod="d1">
+                <fizetes>3000000</fizetes>
+                <vegzettseg>Bsc diploma</vegzettseg>
+                <belepesiDatum>2011-11-10</belepesiDatum>
+                <csapattag cstkod="cs1">
+                    <munkaido>8</munkaido>
+                    <pozicio></pozicio>
+                </csapattag>
+            </dolgozo>
+        </csapat>
+        <projekt pkod="p1">
+            <nev></nev>
+            <felelos></felelos>
+            <hatarido>2024-02-02</hatarido>
+        </projekt>
+        <ugyfel ukod="u1">
+            <nev></nev>
+            <adoszam>12345678-1-12</adoszam>
+            <cim>
+                <varos></varos>
+                <utca></utca>
+                <hazszam></hazszam>
+            </cim>
+            <email></email>
+        </ugyfel>
+    </reszleg>
+    <reszleg rkod="r2">
+        <nev></nev>
+        <emelet></emelet>
+        <letszam></letszam>
+        <csapat cskod="cs1">
+            <vezeto></vezeto>
+            <letszam></letszam>
+            <elorehaladas></elorehaladas>
+            <dolgozo dkod="d1">
+                <fizetes></fizetes>
+                <vegzettseg></vegzettseg>
+                <belepesiDatum></belepesiDatum>
+                <csapattag cstkod="cs1">
+                    <munkaido></munkaido>
+                    <pozicio></pozicio>
+                </csapattag>
+            </dolgozo>
+        </csapat>
+        <projekt pkod="p1">
+            <nev></nev>
+            <felelos></felelos>
+            <hatarido></hatarido>
+        </projekt>
+        <ugyfel ukod="u1">
+            <nev></nev>
+            <adoszam></adoszam>
+            <cim>
+                <varos></varos>
+                <utca></utca>
+                <hazszam></hazszam>
+            </cim>
+            <email></email>
+        </ugyfel>
+    </reszleg>
+    <reszleg rkod="r3">
+        <nev></nev>
+        <emelet></emelet>
+        <letszam></letszam>
+        <csapat cskod="cs1">
+            <vezeto></vezeto>
+            <letszam></letszam>
+            <elorehaladas></elorehaladas>
+            <dolgozo dkod="d1">
+                <fizetes></fizetes>
+                <vegzettseg></vegzettseg>
+                <belepesiDatum></belepesiDatum>
+                <csapattag cstkod="cs1">
+                    <munkaido></munkaido>
+                    <pozicio></pozicio>
+                </csapattag>
+            </dolgozo>
+        </csapat>
+        <projekt pkod="p1">
+            <nev></nev>
+            <felelos></felelos>
+            <hatarido></hatarido>
+        </projekt>
+        <ugyfel ukod="u1">
+            <nev></nev>
+            <adoszam></adoszam>
+            <cim>
+                <varos></varos>
+                <utca></utca>
+                <hazszam></hazszam>
+            </cim>
+            <email></email>
+        </ugyfel>
+    </reszleg>
+</vallalat>
