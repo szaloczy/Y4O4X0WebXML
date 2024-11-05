@@ -13,28 +13,37 @@
                 <fizetes>3000000</fizetes>
                 <vegzettseg>Bsc diploma</vegzettseg>
                 <belepesiDatum>2006-02-02</belepesiDatum>
-                <csapattag cstkod="cst1">
-                    <munkaido>8</munkaido>
+                <beosztas bkod="b1">
+                    <munkaido>
+                        <tol>10:00:00</tol>
+                        <ig>18:00:00</ig>
+                    </munkaido>
                     <pozicio>Szoftverfejlesztő</pozicio>
-                </csapattag>
+                </beosztas>
             </dolgozo>
             <dolgozo dkod="d2">
                 <fizetes>2000</fizetes>
                 <vegzettseg></vegzettseg>
                 <belepesiDatum>2010-01-21</belepesiDatum>
-                <csapattag cstkod="cst2">
-                    <munkaido>8</munkaido>
+                <beosztas bkod="cst2">
+                    <munkaido>
+                        <tol>10:00:00</tol>
+                        <ig>18:00:00</ig>
+                    </munkaido>
                     <pozicio>Tesztelő</pozicio>
-                </csapattag>
+                </beosztas>
             </dolgozo>
             <dolgozo dkod="d3">
                 <fizetes>300000</fizetes>
                 <vegzettseg>Bsc diploma</vegzettseg>
                 <belepesiDatum>2000-03-03</belepesiDatum>
-                <csapattag cstkod="cst3">
-                    <munkaido>8</munkaido>
+                <beosztas bkod="cst3">
+                    <munkaido>
+                        <tol>10:00:00</tol>
+                        <ig>18:00:00</ig>
+                    </munkaido>
                     <pozicio>Tesztelő</pozicio>
-                </csapattag>
+                </beosztas>
             </dolgozo>
         </csapat>
         <csapat cskod="cs2">
@@ -45,10 +54,13 @@
                 <fizetes>242000</fizetes>
                 <vegzettseg>Msc diploma</vegzettseg>
                 <belepesiDatum>2017-03-08</belepesiDatum>
-                <csapattag cstkod="cs1">
-                    <munkaido>8</munkaido>
+                <beosztas bkod="cs1">
+                    <munkaido>
+                        <tol>10:00:00</tol>
+                        <ig>18:00:00</ig>
+                    </munkaido>
                     <pozicio>Projekt menedzser</pozicio>
-                </csapattag>
+                </beosztas>
             </dolgozo>
         </csapat>
         <csapat cskod="cs3">
@@ -59,10 +71,13 @@
                 <fizetes>3000000</fizetes>
                 <vegzettseg>Bsc diploma</vegzettseg>
                 <belepesiDatum>2011-11-10</belepesiDatum>
-                <csapattag cstkod="cs1">
-                    <munkaido>8</munkaido>
+                <beosztas bkod="cs1">
+                    <munkaido>
+                        <tol>10:00:00</tol>
+                        <ig>18:00:00</ig>
+                    </munkaido>
                     <pozicio>Szoftverfejlesztő</pozicio>
-                </csapattag>
+                </beosztas>
             </dolgozo>
         </csapat>
         <projekt pkod="p1">
@@ -93,14 +108,17 @@
                 <fizetes>2000000</fizetes>
                 <vegzettseg></vegzettseg>
                 <belepesiDatum>2009-10-22</belepesiDatum>
-                <csapattag cstkod="cs1">
-                    <munkaido>8</munkaido>
+                <beosztas bkod="cs1">
+                    <munkaido>
+                        <tol>10:00:00</tol>
+                        <ig>18:00:00</ig>
+                    </munkaido>
                     <pozicio>Projekt menedzser</pozicio>
-                </csapattag>
+                </beosztas>
             </dolgozo>
         </csapat>
         <projekt pkod="p1">
-            <nev></nev>
+            <nev>Csomagolás</nev>
             <felelos></felelos>
             <hatarido>2024-01-11</hatarido>
         </projekt>
@@ -116,7 +134,7 @@
         </ugyfel>
     </reszleg>
     <reszleg rkod="r3">
-        <nev></nev>
+        <nev>Mechatronika</nev>
         <emelet>2</emelet>
         <letszam>22</letszam>
         <csapat cskod="cs1">
@@ -127,10 +145,13 @@
                 <fizetes>320000</fizetes>
                 <vegzettseg></vegzettseg>
                 <belepesiDatum>2000-05-24</belepesiDatum>
-                <csapattag cstkod="cs1">
-                    <munkaido>8</munkaido>
+                <beosztas bkod="cs1">
+                    <munkaido>
+                        <tol>10:00:00</tol>
+                        <ig>18:00:00</ig>
+                    </munkaido>
                     <pozicio>Tesztelő</pozicio>
-                </csapattag>
+                </beosztas>
             </dolgozo>
         </csapat>
         <projekt pkod="p1">

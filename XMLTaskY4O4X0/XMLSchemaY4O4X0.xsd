@@ -65,6 +65,13 @@
             <xs:attribute name="ukod"></xs:attribute>
         </xs:complexType>
 
+        <xs:complexType name="munkaidoTipus">
+            <xs:sequence>
+                <xs:element name="tol" type="xs:time"></xs:element>
+                <xs:element name="ig" type="xs:time"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
         <xs:complexType name="projektTipus">
             <xs:sequence>
                 <xs:element name="nev" type="xs:string"></xs:element>
@@ -74,12 +81,12 @@
             <xs:attribute name="pkod" type="xs:string"></xs:attribute>
         </xs:complexType>
 
-        <xs:complexType name="csapattagTipus">
+        <xs:complexType name="beosztasTipus">
             <xs:sequence>
-                <xs:element name="munkaido" type="xs:int"></xs:element>
+                <xs:element name="munkaido" type="munkaidoTipus"></xs:element>
                 <xs:element name="pozicio" type="pozicioTipus"></xs:element>
             </xs:sequence>
-            <xs:attribute name="cstkod" type="xs:string"></xs:attribute>
+            <xs:attribute name="bkod" type="xs:string"></xs:attribute>
         </xs:complexType>
 
         <xs:complexType name="dolgozoTipus" mixed="true">
@@ -87,7 +94,7 @@
                 <xs:element name="fizetes" type="xs:int"></xs:element>
                 <xs:element name="vegzettseg" type="xs:string"></xs:element>
                 <xs:element name="belepesiDatum" type="xs:date"></xs:element>
-                <xs:element name="csapattag" type="csapattagTipus"></xs:element>
+                <xs:element name="beosztas" type="beosztasTipus"></xs:element>
             </xs:sequence>
             <xs:attribute name="dkod" type="xs:string"></xs:attribute>
         </xs:complexType>
