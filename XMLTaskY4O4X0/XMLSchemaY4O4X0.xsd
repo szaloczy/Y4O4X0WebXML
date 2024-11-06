@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+        <!--Email tipus létrehozása, korlátozása reguláris kifejezéssel-->
         <xs:simpleType name="emailTipus">
             <xs:restriction base="xs:string">
                 <!--regex az adószámra: 
@@ -13,6 +14,7 @@
             </xs:restriction>
         </xs:simpleType>
 
+        <!--Adoszam tipus létrehozása, korlátozása reguláris kifejezéssel-->
         <xs:simpleType name="adoszamTipus">
             <xs:restriction base="xs:string">
                 <!--regex az adószámra: 
@@ -25,14 +27,18 @@
             </xs:restriction>
         </xs:simpleType>
 
+        <!--Pozício tipus létrehozása, korlátozása adott értékekre-->
         <xs:simpleType name="pozicioTipus">
             <xs:restriction base="xs:string">
                 <xs:enumeration value="Szoftverfejlesztő"></xs:enumeration>
                 <xs:enumeration value="Projekt menedzser"></xs:enumeration>
+                <xs:enumeration value="Mérnök"></xs:enumeration>
+                <xs:enumeration value="Aszisztens"></xs:enumeration>
                 <xs:enumeration value="Tesztelő"></xs:enumeration>
             </xs:restriction>
         </xs:simpleType>
 
+        <!--Előrehaladás tipus létrehozása, korlátozása adott intervallumra-->
         <xs:simpleType name="elorehaladasTipus">
                 <xs:restriction base="xs:int">
                     <xs:minExclusive value="0"></xs:minExclusive>
@@ -40,6 +46,7 @@
                 </xs:restriction>
         </xs:simpleType>
 
+        <!--Emelet tipus létrehozása, korlátozása adott értékekre-->
         <xs:simpleType name="emeletTipus">
             <xs:restriction base="xs:int">
                 <xs:minExclusive value="1"></xs:minExclusive>
@@ -47,14 +54,16 @@
             </xs:restriction>
         </xs:simpleType>
 
+        <!--Cím tipus létrehozása, gyerekelemek definilása-->
         <xs:complexType name="cimTipus">
             <xs:sequence>
-                <xs:element name="varos"></xs:element>
-                <xs:element name="utca"></xs:element>
-                <xs:element name="hazszam"></xs:element>
+                <xs:element name="varos" type="xs:string"></xs:element>
+                <xs:element name="utca" type="xs:string"></xs:element>
+                <xs:element name="hazszam" type="xs:int"></xs:element>
             </xs:sequence>
         </xs:complexType>
 
+        <!--Ügyfél tipus létrehozása, gyerekelemek definilása-->
         <xs:complexType name="ugyfelTipus">
             <xs:sequence>
                 <xs:element name="nev" type="xs:string"></xs:element>
@@ -65,6 +74,7 @@
             <xs:attribute name="ukod"></xs:attribute>
         </xs:complexType>
 
+        <!--Munkaidő tipus létrehozása, gyerekelemek definilása-->
         <xs:complexType name="munkaidoTipus">
             <xs:sequence>
                 <xs:element name="tol" type="xs:time"></xs:element>
@@ -72,7 +82,8 @@
             </xs:sequence>
         </xs:complexType>
 
-        <xs:complexType name="projektTipus">
+        <!--Projekt tipus létrehozása, gyerekelemek  és attribútumai definilása-->
+        <xs:complexType name="projektTipus" mixed="true">
             <xs:sequence>
                 <xs:element name="nev" type="xs:string"></xs:element>
                 <xs:element name="felelos" type="xs:string"></xs:element>
@@ -81,6 +92,7 @@
             <xs:attribute name="pkod" type="xs:string"></xs:attribute>
         </xs:complexType>
 
+        <!--Beosztás tipus létrehozása, gyerekelemek  és attribútumai definilása-->
         <xs:complexType name="beosztasTipus">
             <xs:sequence>
                 <xs:element name="munkaido" type="munkaidoTipus"></xs:element>
@@ -89,16 +101,18 @@
             <xs:attribute name="bkod" type="xs:string"></xs:attribute>
         </xs:complexType>
 
+        <!--Dolgozo tipus létrehozása, gyerekelemek  és attribútumai definilása-->
         <xs:complexType name="dolgozoTipus" mixed="true">
             <xs:sequence>
                 <xs:element name="fizetes" type="xs:int"></xs:element>
-                <xs:element name="vegzettseg" type="xs:string"></xs:element>
+                <xs:element name="vegzettseg" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
                 <xs:element name="belepesiDatum" type="xs:date"></xs:element>
                 <xs:element name="beosztas" type="beosztasTipus"></xs:element>
             </xs:sequence>
             <xs:attribute name="dkod" type="xs:string"></xs:attribute>
         </xs:complexType>
     
+        <!--Csapat tipus létrehozása, gyerekelemek  és attribútumai definilása-->
         <xs:complexType name="csapatTipus" mixed="true">
             <xs:sequence>
                 <xs:element name="vezeto" type="xs:string"></xs:element>
@@ -109,6 +123,7 @@
             <xs:attribute name="cskod" type="xs:string"></xs:attribute>
         </xs:complexType>
  
+        <!--Részleg egyed létrehozása, gyerekelemek és attribútumai definilása-->
     <xs:element name="reszleg">
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -116,14 +131,14 @@
                 <xs:element name="emelet" type="emeletTipus"></xs:element>
                 <xs:element name="letszam" type="xs:int"></xs:element>
                 <xs:element name="csapat" type="csapatTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
-                <xs:element name="projekt" type="projektTipus"></xs:element>
+                <xs:element name="projekt" type="projektTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
                 <xs:element name="ugyfel" type="ugyfelTipus"></xs:element>
             </xs:sequence>
             <xs:attribute name="rkod" type="xs:string"></xs:attribute>
         </xs:complexType>
     </xs:element>
 
-    <!--Vállalat gyökérelem (globális)-->
+        <!--Vállalat gyökérelem létrehizás (globális), gyerekelemek definiálása-->
     <xs:element name="vallalat">
         <xs:complexType>
             <xs:sequence>
