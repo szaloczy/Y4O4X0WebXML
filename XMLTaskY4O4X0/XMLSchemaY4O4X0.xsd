@@ -71,7 +71,8 @@
                 <xs:element name="cim" type="cimTipus"></xs:element>
                 <xs:element name="email" type="emailTipus"></xs:element>
             </xs:sequence>
-            <xs:attribute name="ukod"></xs:attribute>
+            <xs:attribute name="ukod" type="xs:string" use="required"></xs:attribute>
+            <xs:attribute name="rkod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>
 
         <!--Munkaidő tipus létrehozása, gyerekelemek definilása-->
@@ -89,7 +90,9 @@
                 <xs:element name="felelos" type="xs:string"></xs:element>
                 <xs:element name="hatarido" type="xs:date"></xs:element>
             </xs:sequence>
-            <xs:attribute name="pkod" type="xs:string"></xs:attribute>
+            <xs:attribute name="pkod" type="xs:string" use="required"></xs:attribute>
+            <xs:attribute name="rkod" type="xs:string" use="required"></xs:attribute>
+            <xs:attribute name="ukod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>
 
         <!--Beosztás tipus létrehozása, gyerekelemek  és attribútumai definilása-->
@@ -98,7 +101,7 @@
                 <xs:element name="munkaido" type="munkaidoTipus"></xs:element>
                 <xs:element name="pozicio" type="pozicioTipus"></xs:element>
             </xs:sequence>
-            <xs:attribute name="bkod" type="xs:string"></xs:attribute>
+            <xs:attribute name="bkod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>
 
         <!--Dolgozo tipus létrehozása, gyerekelemek  és attribútumai definilása-->
@@ -109,7 +112,7 @@
                 <xs:element name="belepesiDatum" type="xs:date"></xs:element>
                 <xs:element name="beosztas" type="beosztasTipus"></xs:element>
             </xs:sequence>
-            <xs:attribute name="dkod" type="xs:string"></xs:attribute>
+            <xs:attribute name="dkod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>
     
         <!--Csapat tipus létrehozása, gyerekelemek  és attribútumai definilása-->
@@ -120,7 +123,8 @@
                 <xs:element name="elorehaladas" type="elorehaladasTipus"></xs:element>
                 <xs:element name="dolgozo" type="dolgozoTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
             </xs:sequence>
-            <xs:attribute name="cskod" type="xs:string"></xs:attribute>
+            <xs:attribute name="cskod" type="xs:string" use="required"></xs:attribute>
+            <xs:attribute name="rkod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>
  
         <!--Részleg egyed létrehozása, gyerekelemek és attribútumai definilása-->
@@ -132,18 +136,58 @@
                 <xs:element name="letszam" type="xs:int"></xs:element>
                 <xs:element name="csapat" type="csapatTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
                 <xs:element name="projekt" type="projektTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
-                <xs:element name="ugyfel" type="ugyfelTipus"></xs:element>
+                <xs:element name="ugyfel" type="ugyfelTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
             </xs:sequence>
-            <xs:attribute name="rkod" type="xs:string"></xs:attribute>
+            <xs:attribute name="rkod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>
     </xs:element>
 
-        <!--Vállalat gyökérelem létrehizás (globális), gyerekelemek definiálása-->
+        <!--Vállalat gyökérelem létrehozása (globális), gyerekelemek definiálása-->
     <xs:element name="vallalat">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="reszleg" minOccurs="1" maxOccurs="unbounded"></xs:element>
             </xs:sequence>
         </xs:complexType>
+
+        <!--Elsődleges kulcsok-->
+        <xs:key name="reszleg_kulcs">
+            <xs:selector xpath="reszleg"></xs:selector>
+            <xs:field xpath="@rkod"></xs:field>
+        </xs:key>
+        <xs:key name="csapat_kulcs">
+            <xs:selector xpath="csapat"></xs:selector>
+            <xs:field xpath="@cskod"></xs:field>
+        </xs:key>
+        <xs:key name="projekt_kulcs">
+            <xs:selector xpath="projekt"></xs:selector>
+            <xs:field xpath="@pkod"></xs:field>
+        </xs:key>
+        <xs:key name="ugyfel_kulcs">
+            <xs:selector xpath="ugyfel"></xs:selector>
+            <xs:field xpath="@ukod"></xs:field>
+        </xs:key>
+        <xs:key name="dolgozo_kulcs">
+            <xs:selector xpath="dolgozo"></xs:selector>
+            <xs:field xpath="@dkod"></xs:field>
+        </xs:key>
+
+        <!--Idegen kulcsok-->
+        <xs:keyref name="csapat_tartozik_reszleg_kulcs" refer="reszleg_kulcs">
+            <xs:selector xpath="csapat"></xs:selector>
+            <xs:field xpath="@rkod"></xs:field>
+        </xs:keyref>
+        <xs:keyref name="projekt_tartozik_reszleg_kulcs" refer="reszleg_kulcs">
+            <xs:selector xpath="projekt"></xs:selector>
+            <xs:field xpath="@rkod"></xs:field>
+        </xs:keyref>
+        <xs:keyref name="ugyfel_tartozik_reszleg_kulcs" refer="reszleg_kulcs">
+            <xs:selector xpath="ugyfel"></xs:selector>
+            <xs:field xpath="@rkod"></xs:field>
+        </xs:keyref>
+        <xs:keyref name="dolgozo_tartozik_csapat_kulcs" refer="csapat_kulcs">
+            <xs:selector xpath="csapat/dolgozo"></xs:selector>
+            <xs:field xpath="@cskod"></xs:field>
+        </xs:keyref>
     </xs:element>
 </xs:schema>

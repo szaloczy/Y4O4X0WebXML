@@ -7,7 +7,7 @@
     <emelet>2</emelet>
     <letszam>12</letszam>
     <!--Csapatok-->
-    <csapat cskod="cs1">
+    <csapat cskod="cs1" rkod="r1">
         <vezeto>Szabó Ernő</vezeto>
         <letszam>8</letszam>
         <elorehaladas>30</elorehaladas>
@@ -49,7 +49,7 @@
             </beosztas>
         </dolgozo>
     </csapat>
-    <csapat cskod="cs2">
+    <csapat cskod="cs2" rkod="r1">
         <vezeto>Nagy István</vezeto>
         <letszam>43</letszam>
         <elorehaladas>75</elorehaladas>
@@ -66,7 +66,7 @@
             </beosztas>
         </dolgozo>
     </csapat>
-    <csapat cskod="cs3">
+    <csapat cskod="cs3" rkod="r1">
         <vezeto>Kovács András</vezeto>
         <letszam>15</letszam>
         <elorehaladas>45</elorehaladas>
@@ -84,23 +84,23 @@
         </dolgozo>
     </csapat>
     <!--Projektek-->
-    <projekt pkod="p1">
+    <projekt pkod="p1" rkod="r1" ukod="u1">
         <nev>Fejlesztési projekt</nev>
         <felelos>Szabó Ernő</felelos>
         <hatarido>2024-02-02</hatarido>
     </projekt>
-    <projekt pkod="p7">
+    <projekt pkod="p2" rkod="r1" ukod="u2">
         <nev>Karbantartási projekt</nev>
         <felelos>Kovács András</felelos>
         <hatarido>2024-05-15</hatarido>
     </projekt>
-    <projekt pkod="p4">
+    <projekt pkod="p3" rkod="r1" ukod="u3">
         <nev>Tesztelési projekt</nev>
         <felelos>Nagy István</felelos>
         <hatarido>2024-03-30</hatarido>
     </projekt>
     <!--Ügyfelek-->
-    <ugyfel ukod="u1">
+    <ugyfel ukod="u1" rkod="r1">
         <nev>János és Társai Kft.</nev>
         <adoszam>12345678-1-12</adoszam>
         <cim>
@@ -110,16 +110,38 @@
         </cim>
         <email>janostarsai@gmail.com</email>
     </ugyfel>
+    <ugyfel ukod="u2" rkod="r1">
+        <nev>Banános Joe kft</nev>
+        <adoszam>12573438-1-12</adoszam>
+        <cim>
+            <varos>Kistarcs</varos>
+            <utca>Arany János utca</utca>
+            <hazszam>8</hazszam>
+        </cim>
+        <email>bananajoe@gmail.com</email>
+    </ugyfel>
+    <ugyfel ukod="u3" rkod="r1">
+        <nev>Szepesi Kft.</nev>
+        <adoszam>22245678-1-12</adoszam>
+        <cim>
+            <varos>Eger</varos>
+            <utca>Puskás öcsi út</utca>
+            <hazszam>34</hazszam>
+        </cim>
+        <email>Szepesi@gmail.com</email>
+    </ugyfel>
 </reszleg>
 <!--Részleg-->
 <reszleg rkod="r2">
     <nev>Marketing</nev>
     <emelet>3</emelet>
     <letszam>10</letszam>
-    <csapat cskod="cs1">
+    <!--Csapatok-->
+    <csapat cskod="cs1" rkod="r2">
         <vezeto>Kiss Anna</vezeto>
         <letszam>5</letszam>
         <elorehaladas>60</elorehaladas>
+         <!--Dolgozok-->
         <dolgozo dkod="d1">
             <fizetes>4000000</fizetes>
             <vegzettseg>Msc diploma</vegzettseg>
@@ -157,7 +179,7 @@
             </beosztas>
         </dolgozo>
     </csapat>
-    <csapat cskod="cs2">
+    <csapat cskod="cs2" rkod="r2">
         <vezeto>Nagy Zoltán</vezeto>
         <letszam>5</letszam>
         <elorehaladas>45</elorehaladas>
@@ -174,35 +196,39 @@
             </beosztas>
         </dolgozo>
     </csapat>
-    <projekt pkod="p2">
+    <!--Projektek-->
+    <projekt pkod="p2" rkod="r2" ukod="u2">
         <nev>Brand Építés</nev>
         <felelos>Kiss Anna</felelos>
         <hatarido>2024-03-15</hatarido>
     </projekt>
-    <projekt pkod="p8">
+    <projekt pkod="p8" rkod="r2" ukod="u2">
         <nev>SEO Optimalizálás</nev>
         <felelos>Nagy Zoltán</felelos>
         <hatarido>2024-04-20</hatarido>
     </projekt>
-    <ugyfel ukod="u2">
-        <nev>XY Kft.</nev>
+     <!--Ügyfelek-->
+    <ugyfel ukod="u2" rkod="r2">
+        <nev>Kolompár Kft.</nev>
         <adoszam>87654321-1-12</adoszam>
         <cim>
             <varos>Debrecen</varos>
             <utca>Fő utca</utca>
             <hazszam>10</hazszam>
         </cim>
-        <email>xykft@domain.com</email>
+        <email>Kolompar@domain.com</email>
     </ugyfel>
 </reszleg>
 <reszleg rkod="r3">
     <nev>HR</nev>
     <emelet>2</emelet>
     <letszam>6</letszam>
-    <csapat cskod="cs1">
+     <!--Csapatok-->
+    <csapat cskod="cs1" rkod="r3">
         <vezeto>Tóth Péter</vezeto>
         <letszam>3</letszam>
         <elorehaladas>80</elorehaladas>
+        <!--Dolgozók-->
         <dolgozo dkod="d1">
             <fizetes>5000000</fizetes>
             <vegzettseg>Msc diploma</vegzettseg>
@@ -240,7 +266,7 @@
             </beosztas>
         </dolgozo>
     </csapat>
-    <csapat cskod="cs2">
+    <csapat cskod="cs2" rkod="r3">
         <vezeto>Varga Eszter</vezeto>
         <letszam>3</letszam>
         <elorehaladas>70</elorehaladas>
@@ -257,17 +283,19 @@
             </beosztas>
         </dolgozo>
     </csapat>
-    <projekt pkod="p3">
+    <!--Projektek-->
+    <projekt pkod="p3" rkod="r3" ukod="u5">
         <nev>Alkalmazotti elégedettség felmérés</nev>
         <felelos>Tóth Péter</felelos>
         <hatarido>2024-06-30</hatarido>
     </projekt>
-    <projekt pkod="p9">
+    <projekt pkod="p9" rkod="r3" ukod="u5">
         <nev>Jutalom és elismerés program</nev>
         <felelos>Varga Eszter</felelos>
         <hatarido>2024-08-15</hatarido>
     </projekt>
-    <ugyfel ukod="u3">
+    <!--Ügyfelek-->
+    <ugyfel ukod="u5" rkod="r3">
         <nev>ABC Tanácsadó Kft.</nev>
         <adoszam>11223344-1-12</adoszam>
         <cim>
