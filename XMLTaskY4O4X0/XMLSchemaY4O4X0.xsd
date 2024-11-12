@@ -181,9 +181,9 @@
             <xs:selector xpath="projekt"></xs:selector>
             <xs:field xpath="@rkod"></xs:field>
         </xs:keyref>
-        <xs:keyref name="ugyfel_tartozik_reszleg_kulcs" refer="reszleg_kulcs">
+        <xs:keyref name="ugyfel_rendel_projekt_kulcs" refer="projekt_kulcs">
             <xs:selector xpath="ugyfel"></xs:selector>
-            <xs:field xpath="@rkod"></xs:field>
+            <xs:field xpath="@pkod"></xs:field>
         </xs:keyref>
         <xs:keyref name="dolgozo_tartozik_csapat_kulcs" refer="csapat_kulcs">
             <xs:selector xpath="csapat/dolgozo"></xs:selector>
