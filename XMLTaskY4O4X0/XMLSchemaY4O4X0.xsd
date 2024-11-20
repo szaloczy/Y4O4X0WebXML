@@ -111,6 +111,7 @@
                 <xs:element name="vegzettseg" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
                 <xs:element name="belepesiDatum" type="xs:date"></xs:element>
                 <xs:element name="beosztas" type="beosztasTipus"></xs:element>
+                <xs:element name="nev" type="xs:string"></xs:element>
             </xs:sequence>
             <xs:attribute name="dkod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>

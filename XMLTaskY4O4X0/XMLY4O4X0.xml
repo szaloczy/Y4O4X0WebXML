@@ -23,6 +23,7 @@
                 </munkaido>
                 <pozicio>Szoftverfejlesztő</pozicio>
             </beosztas>
+            <nev>Szabó Nórbert</nev>
         </dolgozo>
         <dolgozo dkod="d2">
             <fizetes>2000</fizetes>
@@ -35,6 +36,7 @@
                 </munkaido>
                 <pozicio>Tesztelő</pozicio>
             </beosztas>
+            <nev>Illés János</nev>
         </dolgozo>
         <dolgozo dkod="d3">
             <fizetes>300000</fizetes>
@@ -47,6 +49,7 @@
                 </munkaido>
                 <pozicio>Tesztelő</pozicio>
             </beosztas>
+            <nev>Fekete Csaba</nev>
         </dolgozo>
     </csapat>
     <csapat cskod="cs2" rkod="r1">
@@ -64,6 +67,7 @@
                 </munkaido>
                 <pozicio>Projekt menedzser</pozicio>
             </beosztas>
+            <nev>Kiss Nikolett</nev>
         </dolgozo>
     </csapat>
     <csapat cskod="cs3" rkod="r1">
@@ -81,6 +85,7 @@
                 </munkaido>
                 <pozicio>Szoftverfejlesztő</pozicio>
             </beosztas>
+            <nev>Szabó Zsófia</nev>
         </dolgozo>
     </csapat>
     <!--Projektek-->
@@ -153,6 +158,7 @@
                 </munkaido>
                 <pozicio>Tesztelő</pozicio>
             </beosztas>
+            <nev>Lakatos Tibor</nev>
         </dolgozo>
         <dolgozo dkod="d2">
             <fizetes>3500000</fizetes>
@@ -165,6 +171,7 @@
                 </munkaido>
                 <pozicio>Szoftverfejlesztő</pozicio>
             </beosztas>
+            <nev>Kunhalasi Ágnes</nev>
         </dolgozo>
         <dolgozo dkod="d3">
             <fizetes>2500000</fizetes>
@@ -177,6 +184,7 @@
                 </munkaido>
                 <pozicio>Mérnök</pozicio>
             </beosztas>
+            <nev>Fehér Zoltán</nev>
         </dolgozo>
     </csapat>
     <csapat cskod="cs2" rkod="r2">
@@ -194,6 +202,7 @@
                 </munkaido>
                 <pozicio>Projekt menedzser</pozicio>
             </beosztas>
+            <nev>Simon Gábor</nev>
         </dolgozo>
     </csapat>
     <!--Projektek-->
@@ -240,6 +249,7 @@
                 </munkaido>
                 <pozicio>Projekt menedzser</pozicio>
             </beosztas>
+            <nev>Juhász Péter</nev>
         </dolgozo>
         <dolgozo dkod="d2">
             <fizetes>3500000</fizetes>
@@ -252,6 +262,7 @@
                 </munkaido>
                 <pozicio>Mérnök</pozicio>
             </beosztas>
+            <nev>Tabácsi János</nev>
         </dolgozo>
         <dolgozo dkod="d3">
             <fizetes>3000000</fizetes>
@@ -264,6 +275,7 @@
                 </munkaido>
                 <pozicio>Mérnök</pozicio>
             </beosztas>
+            <nev>Orbán Kata</nev>
         </dolgozo>
     </csapat>
     <csapat cskod="cs2" rkod="r3">
@@ -281,6 +293,7 @@
                 </munkaido>
                 <pozicio>Aszisztens</pozicio>
             </beosztas>
+            <nev>Tisza Szilvia</nev>
         </dolgozo>
     </csapat>
     <!--Projektek-->
