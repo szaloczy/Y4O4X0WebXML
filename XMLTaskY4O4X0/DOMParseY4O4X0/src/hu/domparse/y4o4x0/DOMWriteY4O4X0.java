@@ -21,6 +21,7 @@ public class DOMWriteY4O4X0 {
         }
     }
 
+    //Xml létrehozás és kiírása a konzolra
     private static void createAndPrintXMLDocument() throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -68,11 +69,13 @@ public class DOMWriteY4O4X0 {
         rootElement.appendChild(department);
     }
 
+    //Csapatok hozzáadása
     private static void addTeam(Document document, Element parentElement, String cskod, String rkod, String vezeto, String letszam, String elorehaladas) {
         Element team = document.createElement("csapat");
         team.setAttribute("cskod", cskod);
         team.setAttribute("rkod", rkod);
 
+        //Új elemek hozzáfűzése
         appendElement(document, team, "vezeto", vezeto);
         appendElement(document, team, "letszam", letszam);
         appendElement(document, team, "elorehaladas", elorehaladas);
@@ -85,21 +88,25 @@ public class DOMWriteY4O4X0 {
         parentElement.appendChild(team);
     }
 
+    //Dolgozók hozzáadása
     private static void addEmployee(Document document, Element teamElement, String dskod, String fizetes, String vegzettseg, String szuletes, String munkaido_kezd, String munkaido_veg, String pozicio, String nev) {
         Element employee = document.createElement("dolgozo");
         employee.setAttribute("dkod", dskod);
 
+        //Új elemek hozzáfűzése
         appendElement(document, employee, "fizetes", fizetes);
         appendElement(document, employee, "vegzettseg", vegzettseg);
         appendElement(document, employee, "belepesiDatum", szuletes);
 
+        //Új elemek hozzáfűzése
         Element workTime = document.createElement("munkaido");
         appendElement(document, workTime, "tol", munkaido_kezd);
         appendElement(document, workTime, "ig", munkaido_veg);
         employee.appendChild(workTime);
 
+        //Új elemek hozzáfűzése
         Element position = document.createElement("beosztas");
-        position.setAttribute("bkod", "b1");  // Igazítsuk a tényleges logikához
+        position.setAttribute("bkod", "b1");  
         appendElement(document, position, "pozicio", pozicio);
         employee.appendChild(position);
 
@@ -108,11 +115,13 @@ public class DOMWriteY4O4X0 {
         teamElement.appendChild(employee);
     }
 
+    //Projektek hozzáadása
     private static void addProject(Document document, Element department, String pskod, String rkod, String nev, String vezetok, String datum) {
         Element project = document.createElement("projekt");
         project.setAttribute("pkod", pskod);
         project.setAttribute("rkod", rkod);
 
+        //Új elemek hozzáfűzése
         appendElement(document, project, "nev", nev);
         appendElement(document, project, "felelos", vezetok);
         appendElement(document, project, "hatarido", datum);
@@ -140,12 +149,14 @@ public class DOMWriteY4O4X0 {
         department.appendChild(client);
     }
 
+    //Elem hozzáfűzés
     private static void appendElement(Document document, Element parentElement, String tagName, String textContent) {
         Element element = document.createElement(tagName);
         element.appendChild(document.createTextNode(textContent));
         parentElement.appendChild(element);
     }
 
+    //Létrehozott xml dokumentum kiiratása
     private static void printDocumentToConsole(Document document) throws Exception {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();

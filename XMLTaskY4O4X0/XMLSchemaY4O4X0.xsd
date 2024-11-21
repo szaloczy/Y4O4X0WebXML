@@ -72,7 +72,7 @@
                 <xs:element name="email" type="emailTipus"></xs:element>
             </xs:sequence>
             <xs:attribute name="ukod" type="xs:string" use="required"></xs:attribute>
-            <xs:attribute name="rkod" type="xs:string" use="required"></xs:attribute>
+            <xs:attribute name="pkod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>
 
         <!--Munkaidő tipus létrehozása, gyerekelemek definilása-->
@@ -92,7 +92,6 @@
             </xs:sequence>
             <xs:attribute name="pkod" type="xs:string" use="required"></xs:attribute>
             <xs:attribute name="rkod" type="xs:string" use="required"></xs:attribute>
-            <xs:attribute name="ukod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>
 
         <!--Beosztás tipus létrehozása, gyerekelemek  és attribútumai definilása-->
