@@ -4,6 +4,10 @@ import java.io.File;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -38,7 +42,7 @@ public class DOMReadY4O4X0 {
 
                     // Részleg információinak kiírása
                     kiirReszlegInfo(reszleg);
-                    
+
                     // "csapat" elemek lekérése és feldolgozása
                     NodeList csapatList = reszleg.getElementsByTagName("csapat");
                     for (int j = 0; j < csapatList.getLength(); j++) {
@@ -65,42 +69,51 @@ public class DOMReadY4O4X0 {
                             }
                         }
                     }
-                    
+
                     // "projekt" elemek lekérése és feldolgozása
                     NodeList projektLista = reszleg.getElementsByTagName("projekt");
-                    for(int j = 0; j < projektLista.getLength(); j++) {
-                    	 Node projektNode = projektLista.item(j);
-                    	 System.out.println("\t jelenlegi elem: " + projektNode.getNodeName());
-                    	 
-                    	 if(projektNode.getNodeType() == Node.ELEMENT_NODE) {
-                    		 Element projekt = (Element) projektNode;
-                    		 
-                             // Projekt információinak kiírása
-                    		 kiirProjektInfo(projekt);
-                    	 }
+                    for (int j = 0; j < projektLista.getLength(); j++) {
+                        Node projektNode = projektLista.item(j);
+                        System.out.println("\t jelenlegi elem: " + projektNode.getNodeName());
+
+                        if (projektNode.getNodeType() == Node.ELEMENT_NODE) {
+                            Element projekt = (Element) projektNode;
+
+                            // Projekt információinak kiírása
+                            kiirProjektInfo(projekt);
+                        }
                     }
-                    
+
                     // "ugyfel" elemek lekérése és feldolgozása
                     NodeList ugyfelList = reszleg.getElementsByTagName("ugyfel");
-                    for(int k = 0 ; k < ugyfelList.getLength(); k++) {
-                    	Node ugyfelNode = ugyfelList.item(0);
-                    	System.out.println("\t Jelenlegi elem: " + ugyfelNode.getNodeName());
-                    	
-                    	if(ugyfelNode.getNodeType() == Node.ELEMENT_NODE) {
-                    		Element ugyfel = (Element) ugyfelNode;
-                    		
+                    for (int k = 0; k < ugyfelList.getLength(); k++) {
+                        Node ugyfelNode = ugyfelList.item(0);
+                        System.out.println("\t Jelenlegi elem: " + ugyfelNode.getNodeName());
+
+                        if (ugyfelNode.getNodeType() == Node.ELEMENT_NODE) {
+                            Element ugyfel = (Element) ugyfelNode;
+
                             // Ügyfél információinak kiírása
-                    		kiirUgyfelInfo(ugyfel);
-                    	}
+                            kiirUgyfelInfo(ugyfel);
+                        }
                     }
-                    
+
                 }
-                
             }
+            printToFile(doc);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
   }
+
+    private static void printToFile(Document doc) throws Exception{
+        File outputFile = new File("src/resources/XMLY4O4X02.xml");
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        DOMSource source = new DOMSource(doc);
+        StreamResult outFile = new StreamResult(outputFile);
+        transformer.transform(source, outFile);
+        System.out.println("Sucessfully written to " + outputFile);
+    }
     
     // XML dokumentum felépítése (beolvasás és normalizálás)
 	private static Document buildDocument(File xmlFile) throws Exception{
@@ -163,6 +176,10 @@ public class DOMReadY4O4X0 {
         Node belepesiDatumNode = dolgozo.getElementsByTagName("belepesiDatum").item(0);
         String belepesiDatum = belepesiDatumNode.getTextContent();
         System.out.println("Belépésidátum: " + belepesiDatum);
+
+        Node nevNode = dolgozo.getElementsByTagName("nev").item(0);
+        String nev = nevNode.getTextContent();
+        System.out.println("Név: " + nev);
 
         kiirBeosztasInfo(dolgozo);
     }

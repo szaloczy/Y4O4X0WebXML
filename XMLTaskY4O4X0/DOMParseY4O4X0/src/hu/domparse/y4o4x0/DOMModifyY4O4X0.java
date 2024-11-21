@@ -20,17 +20,19 @@ public class DOMModifyY4O4X0 {
 	public static void main(String[] args) {
 		try {
 			//Fájl beolvasása
-			File xmlFile = new File("../XMLY4O4X0.xml");
+			File xmlFile = new File("src/resources/XMLY4O4X0.xml");
 			// Az XML dokumentum felépítése (DOM objektum létrehozása)
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			Document doc = builder.parse(xmlFile);
 			doc.getDocumentElement().normalize();
-			
+
+			//Metódus hívások
 			modifyEmployeeSalary(doc);
 			addNewProjectToMarketingDepartment(doc);
 			updateACostumerEmailAddress(doc);
 			increaseNOTeamMembers(doc);
-			
+
+			//Módosítot xml fastruktúrában való kiírása
 			printModifiedXml(doc);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
