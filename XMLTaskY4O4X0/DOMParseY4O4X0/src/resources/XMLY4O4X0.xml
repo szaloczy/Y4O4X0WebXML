@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<vallalat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <!--  Részlegek-->
+<vallalat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="XMLSchemaY4O4X0.xsd">
+ <!--Részlegek-->
  <reszleg rkod="r1">
     <nev>Elektronika</nev>
     <emelet>2</emelet>
@@ -15,37 +16,40 @@
             <fizetes>3000000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2006-02-02</belepesiDatum>
-            <beosztas bkod="b1">
+            <beosztas bkod="cs1">
                 <munkaido>
                     <tol>10:00:00</tol>
                     <ig>18:00:00</ig>
                 </munkaido>
                 <pozicio>Szoftverfejlesztő</pozicio>
             </beosztas>
+            <nev>Szabó Nórbert</nev>
         </dolgozo>
         <dolgozo dkod="d2">
-            <fizetes>2000</fizetes>
+            <fizetes>200000</fizetes>
             <vegzettseg>Középfokú végzettség</vegzettseg>
             <belepesiDatum>2010-01-21</belepesiDatum>
-            <beosztas bkod="bkod2">
+            <beosztas bkod="cs1">
                 <munkaido>
                     <tol>10:00:00</tol>
                     <ig>18:00:00</ig>
                 </munkaido>
                 <pozicio>Tesztelő</pozicio>
             </beosztas>
+            <nev>Illés János</nev>
         </dolgozo>
         <dolgozo dkod="d3">
             <fizetes>300000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2000-03-03</belepesiDatum>
-            <beosztas bkod="bkod3">
+            <beosztas bkod="cs1">
                 <munkaido>
                     <tol>10:00:00</tol>
                     <ig>18:00:00</ig>
                 </munkaido>
                 <pozicio>Tesztelő</pozicio>
             </beosztas>
+            <nev>Fekete Csaba</nev>
         </dolgozo>
     </csapat>
     <csapat cskod="cs2" rkod="r1">
@@ -56,13 +60,14 @@
             <fizetes>242000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2017-03-08</belepesiDatum>
-            <beosztas bkod="cs1">
+            <beosztas bkod="cs2">
                 <munkaido>
                     <tol>10:00:00</tol>
                     <ig>18:00:00</ig>
                 </munkaido>
                 <pozicio>Projekt menedzser</pozicio>
             </beosztas>
+            <nev>Kiss Nikolett</nev>
         </dolgozo>
     </csapat>
     <csapat cskod="cs3" rkod="r1">
@@ -73,33 +78,34 @@
             <fizetes>3000000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2011-11-10</belepesiDatum>
-            <beosztas bkod="cs1">
+            <beosztas bkod="cs3">
                 <munkaido>
                     <tol>10:00:00</tol>
                     <ig>18:00:00</ig>
                 </munkaido>
                 <pozicio>Szoftverfejlesztő</pozicio>
             </beosztas>
+            <nev>Szabó Zsófia</nev>
         </dolgozo>
     </csapat>
     <!--Projektek-->
-    <projekt pkod="p1" rkod="r1" ukod="u1">
+    <projekt pkod="p1" rkod="r1">
         <nev>Fejlesztési projekt</nev>
         <felelos>Szabó Ernő</felelos>
         <hatarido>2024-02-02</hatarido>
     </projekt>
-    <projekt pkod="p2" rkod="r1" ukod="u2">
+    <projekt pkod="p2" rkod="r1">
         <nev>Karbantartási projekt</nev>
         <felelos>Kovács András</felelos>
         <hatarido>2024-05-15</hatarido>
     </projekt>
-    <projekt pkod="p3" rkod="r1" ukod="u3">
+    <projekt pkod="p3" rkod="r1">
         <nev>Tesztelési projekt</nev>
         <felelos>Nagy István</felelos>
         <hatarido>2024-03-30</hatarido>
     </projekt>
     <!--Ügyfelek-->
-    <ugyfel ukod="u1" rkod="r1">
+    <ugyfel ukod="u1" pkod="p1">
         <nev>János és Társai Kft.</nev>
         <adoszam>12345678-1-12</adoszam>
         <cim>
@@ -109,7 +115,7 @@
         </cim>
         <email>janostarsai@gmail.com</email>
     </ugyfel>
-    <ugyfel ukod="u2" rkod="r1">
+    <ugyfel ukod="u2" pkod="p2">
         <nev>Banános Joe kft</nev>
         <adoszam>12573438-1-12</adoszam>
         <cim>
@@ -119,7 +125,7 @@
         </cim>
         <email>bananajoe@gmail.com</email>
     </ugyfel>
-    <ugyfel ukod="u3" rkod="r1">
+    <ugyfel ukod="u3" pkod="p3">
         <nev>Szepesi Kft.</nev>
         <adoszam>22245678-1-12</adoszam>
         <cim>
@@ -136,78 +142,82 @@
     <emelet>3</emelet>
     <letszam>10</letszam>
     <!--Csapatok-->
-    <csapat cskod="cs1" rkod="r2">
+    <csapat cskod="cs4" rkod="r2">
         <vezeto>Kiss Anna</vezeto>
         <letszam>5</letszam>
         <elorehaladas>60</elorehaladas>
          <!--Dolgozok-->
-        <dolgozo dkod="d1">
+        <dolgozo dkod="d6">
             <fizetes>4000000</fizetes>
             <vegzettseg>Msc diploma</vegzettseg>
             <belepesiDatum>2015-05-12</belepesiDatum>
-            <beosztas bkod="b1">
+            <beosztas bkod="cs4">
                 <munkaido>
                     <tol>09:00:00</tol>
                     <ig>17:00:00</ig>
                 </munkaido>
                 <pozicio>Tesztelő</pozicio>
             </beosztas>
+            <nev>Lakatos Tibor</nev>
         </dolgozo>
-        <dolgozo dkod="d2">
+        <dolgozo dkod="d7">
             <fizetes>3500000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2018-03-04</belepesiDatum>
-            <beosztas bkod="bkod2">
+            <beosztas bkod="cs4">
                 <munkaido>
                     <tol>09:00:00</tol>
                     <ig>17:00:00</ig>
                 </munkaido>
                 <pozicio>Szoftverfejlesztő</pozicio>
             </beosztas>
+            <nev>Kunhalasi Ágnes</nev>
         </dolgozo>
-        <dolgozo dkod="d3">
+        <dolgozo dkod="d8">
             <fizetes>2500000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2017-08-19</belepesiDatum>
-            <beosztas bkod="bkod3">
+            <beosztas bkod="cs4">
                 <munkaido>
                     <tol>09:00:00</tol>
                     <ig>17:00:00</ig>
                 </munkaido>
                 <pozicio>Mérnök</pozicio>
             </beosztas>
+            <nev>Fehér Zoltán</nev>
         </dolgozo>
     </csapat>
-    <csapat cskod="cs2" rkod="r2">
+    <csapat cskod="cs5" rkod="r2">
         <vezeto>Nagy Zoltán</vezeto>
         <letszam>5</letszam>
         <elorehaladas>45</elorehaladas>
-        <dolgozo dkod="d4">
+        <dolgozo dkod="d9">
             <fizetes>3000000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2020-09-11</belepesiDatum>
-            <beosztas bkod="cs1">
+            <beosztas bkod="cs5">
                 <munkaido>
                     <tol>09:00:00</tol>
                     <ig>17:00:00</ig>
                 </munkaido>
                 <pozicio>Projekt menedzser</pozicio>
             </beosztas>
+            <nev>Simon Gábor</nev>
         </dolgozo>
     </csapat>
     <!--Projektek-->
-    <projekt pkod="p2" rkod="r2" ukod="u2">
+    <projekt pkod="p4" rkod="r2" >
         <nev>Brand Építés</nev>
         <felelos>Kiss Anna</felelos>
         <hatarido>2024-03-15</hatarido>
     </projekt>
-    <projekt pkod="p8" rkod="r2" ukod="u2">
+    <projekt pkod="p5" rkod="r2" >
         <nev>SEO Optimalizálás</nev>
         <felelos>Nagy Zoltán</felelos>
         <hatarido>2024-04-20</hatarido>
     </projekt>
      <!--Ügyfelek-->
-    <ugyfel ukod="u2" rkod="r2">
+    <ugyfel ukod="u4" pkod="p4">
         <nev>Kolompár Kft.</nev>
         <adoszam>87654321-1-12</adoszam>
         <cim>
@@ -217,84 +227,98 @@
         </cim>
         <email>Kolompar@domain.com</email>
     </ugyfel>
+    <ugyfel ukod="u5" pkod="p5">
+        <nev>Csizmadia Kft.</nev>
+        <adoszam>81154321-1-12</adoszam>
+        <cim>
+            <varos>Kőszeghalom</varos>
+            <utca>Nyircsák utca</utca>
+            <hazszam>19</hazszam>
+        </cim>
+        <email>Csiz@domain.com</email>
+    </ugyfel>
 </reszleg>
 <reszleg rkod="r3">
     <nev>HR</nev>
     <emelet>2</emelet>
     <letszam>6</letszam>
      <!--Csapatok-->
-    <csapat cskod="cs1" rkod="r3">
+    <csapat cskod="cs6" rkod="r3">
         <vezeto>Tóth Péter</vezeto>
         <letszam>3</letszam>
         <elorehaladas>80</elorehaladas>
         <!--Dolgozók-->
-        <dolgozo dkod="d1">
+        <dolgozo dkod="d10">
             <fizetes>5000000</fizetes>
             <vegzettseg>Msc diploma</vegzettseg>
             <belepesiDatum>2012-10-10</belepesiDatum>
-            <beosztas bkod="b1">
+            <beosztas bkod="cs6">
                 <munkaido>
                     <tol>09:00:00</tol>
                     <ig>17:00:00</ig>
                 </munkaido>
                 <pozicio>Projekt menedzser</pozicio>
             </beosztas>
+            <nev>Juhász Péter</nev>
         </dolgozo>
-        <dolgozo dkod="d2">
+        <dolgozo dkod="d11">
             <fizetes>3500000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2015-05-22</belepesiDatum>
-            <beosztas bkod="bkod2">
+            <beosztas bkod="cs6">
                 <munkaido>
                     <tol>09:00:00</tol>
                     <ig>17:00:00</ig>
                 </munkaido>
                 <pozicio>Mérnök</pozicio>
             </beosztas>
+            <nev>Tabácsi János</nev>
         </dolgozo>
-        <dolgozo dkod="d3">
+        <dolgozo dkod="d12">
             <fizetes>3000000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2018-07-05</belepesiDatum>
-            <beosztas bkod="bkod3">
+            <beosztas bkod="cs6">
                 <munkaido>
                     <tol>09:00:00</tol>
                     <ig>17:00:00</ig>
                 </munkaido>
                 <pozicio>Mérnök</pozicio>
             </beosztas>
+            <nev>Orbán Kata</nev>
         </dolgozo>
     </csapat>
-    <csapat cskod="cs2" rkod="r3">
+    <csapat cskod="cs7" rkod="r3">
         <vezeto>Varga Eszter</vezeto>
         <letszam>3</letszam>
         <elorehaladas>70</elorehaladas>
-        <dolgozo dkod="d4">
+        <dolgozo dkod="d13">
             <fizetes>2500000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2019-11-14</belepesiDatum>
-            <beosztas bkod="cs1">
+            <beosztas bkod="cs7">
                 <munkaido>
                     <tol>09:00:00</tol>
                     <ig>17:00:00</ig>
                 </munkaido>
                 <pozicio>Aszisztens</pozicio>
             </beosztas>
+            <nev>Tisza Szilvia</nev>
         </dolgozo>
     </csapat>
     <!--Projektek-->
-    <projekt pkod="p3" rkod="r3" ukod="u5">
+    <projekt pkod="p6" rkod="r3" >
         <nev>Alkalmazotti elégedettség felmérés</nev>
         <felelos>Tóth Péter</felelos>
         <hatarido>2024-06-30</hatarido>
     </projekt>
-    <projekt pkod="p9" rkod="r3" ukod="u5">
+    <projekt pkod="p7" rkod="r3" >
         <nev>Jutalom és elismerés program</nev>
         <felelos>Varga Eszter</felelos>
         <hatarido>2024-08-15</hatarido>
     </projekt>
     <!--Ügyfelek-->
-    <ugyfel ukod="u5" rkod="r3">
+    <ugyfel ukod="u6" pkod="p6">
         <nev>ABC Tanácsadó Kft.</nev>
         <adoszam>11223344-1-12</adoszam>
         <cim>
@@ -303,6 +327,16 @@
             <hazszam>15</hazszam>
         </cim>
         <email>abctanacsado@gmail.com</email>
+    </ugyfel>
+    <ugyfel ukod="u7" pkod="p7">
+        <nev>aliKebab Kft</nev>
+        <adoszam>17773344-1-12</adoszam>
+        <cim>
+            <varos>Pozsony</varos>
+            <utca>Kiss Ferencz utca</utca>
+            <hazszam>5</hazszam>
+        </cim>
+        <email>aAlikebab@gmail.com</email>
     </ugyfel>
 </reszleg>
 </vallalat>

@@ -47,7 +47,7 @@ public class DOMReadY4O4X0 {
                     NodeList csapatList = reszleg.getElementsByTagName("csapat");
                     for (int j = 0; j < csapatList.getLength(); j++) {
                         Node csapatNode = csapatList.item(j);
-                        System.out.println("\tJelenlegi elem: " + csapatNode.getNodeName());
+                        System.out.println("\n\tJelenlegi elem: " + csapatNode.getNodeName());
 
                         if (csapatNode.getNodeType() == Node.ELEMENT_NODE) {
                             Element csapat = (Element) csapatNode;
@@ -59,7 +59,7 @@ public class DOMReadY4O4X0 {
                             NodeList dolgozoList = reszleg.getElementsByTagName("dolgozo");
                             for (int k = 0; k < dolgozoList.getLength(); k++) {
                                 Node dolgozoNode = dolgozoList.item(k);
-                                System.out.println("\tJelenlegi elem: " + dolgozoNode.getNodeName());
+                                System.out.println("\n\tJelenlegi elem: " + dolgozoNode.getNodeName());
 
                                 if (dolgozoNode.getNodeType() == Node.ELEMENT_NODE) {
                                     Element dolgozo = (Element) dolgozoNode;
@@ -74,7 +74,7 @@ public class DOMReadY4O4X0 {
                     NodeList projektLista = reszleg.getElementsByTagName("projekt");
                     for (int j = 0; j < projektLista.getLength(); j++) {
                         Node projektNode = projektLista.item(j);
-                        System.out.println("\t jelenlegi elem: " + projektNode.getNodeName());
+                        System.out.println("\n\t jelenlegi elem: " + projektNode.getNodeName());
 
                         if (projektNode.getNodeType() == Node.ELEMENT_NODE) {
                             Element projekt = (Element) projektNode;
@@ -88,7 +88,7 @@ public class DOMReadY4O4X0 {
                     NodeList ugyfelList = reszleg.getElementsByTagName("ugyfel");
                     for (int k = 0; k < ugyfelList.getLength(); k++) {
                         Node ugyfelNode = ugyfelList.item(0);
-                        System.out.println("\t Jelenlegi elem: " + ugyfelNode.getNodeName());
+                        System.out.println("\n\t Jelenlegi elem: " + ugyfelNode.getNodeName());
 
                         if (ugyfelNode.getNodeType() == Node.ELEMENT_NODE) {
                             Element ugyfel = (Element) ugyfelNode;
@@ -187,7 +187,7 @@ public class DOMReadY4O4X0 {
     // Dolgozó beosztás információinak kiírása
     private static void kiirBeosztasInfo(Element dolgozo) {
         Element beosztas = (Element) dolgozo.getElementsByTagName("beosztas").item(0);
-        System.out.println("\tJelenlegi elem: " + beosztas.getNodeName());
+        System.out.println("\n\tJelenlegi elem: " + beosztas.getNodeName());
 
         String bkod = beosztas.getAttribute("bkod");
         System.out.println("Beosztás kód: " + bkod);
@@ -246,7 +246,7 @@ public class DOMReadY4O4X0 {
 		
 		Node cimNode = ugyfel.getElementsByTagName("cim").item(0);
 		Element cim = (Element) cimNode;
-		System.out.println("\tJelenlegi elem: " + cim.getNodeName());
+		System.out.println("\n\tJelenlegi elem: " + cim.getNodeName());
 		kiirUgyfelCimInfo(cim);
 		
 		Node emailNode = ugyfel.getElementsByTagName("email").item(0);

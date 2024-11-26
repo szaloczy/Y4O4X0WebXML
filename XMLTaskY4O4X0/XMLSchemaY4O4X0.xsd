@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+        <!-- Elemi jelölőelemek definiálása -->
+        <xs:element name="csapat" type="csapatTipus" />
+        <xs:element name="projekt" type="projektTipus" />
+        <xs:element name="ugyfel" type="ugyfelTipus" />
+        <xs:element name="dolgozo" type="dolgozoTipus" />
+
         <!--Email tipus létrehozása, korlátozása reguláris kifejezéssel-->
         <xs:simpleType name="emailTipus">
             <xs:restriction base="xs:string">
@@ -134,9 +140,10 @@
                 <xs:element name="nev" type="xs:string"></xs:element>
                 <xs:element name="emelet" type="emeletTipus"></xs:element>
                 <xs:element name="letszam" type="xs:int"></xs:element>
-                <xs:element name="csapat" type="csapatTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
-                <xs:element name="projekt" type="projektTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
-                <xs:element name="ugyfel" type="ugyfelTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <!-- Hivatkozások globális elemekre -->
+                <xs:element ref="csapat" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element ref="projekt" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element ref="ugyfel" minOccurs="1" maxOccurs="unbounded"></xs:element>
             </xs:sequence>
             <xs:attribute name="rkod" type="xs:string" use="required"></xs:attribute>
         </xs:complexType>
@@ -156,19 +163,19 @@
             <xs:field xpath="@rkod"></xs:field>
         </xs:key>
         <xs:key name="csapat_kulcs">
-            <xs:selector xpath="csapat"></xs:selector>
+            <xs:selector xpath="reszleg/csapat"></xs:selector>
             <xs:field xpath="@cskod"></xs:field>
         </xs:key>
         <xs:key name="projekt_kulcs">
-            <xs:selector xpath="projekt"></xs:selector>
+            <xs:selector xpath="reszleg/projekt"></xs:selector>
             <xs:field xpath="@pkod"></xs:field>
         </xs:key>
         <xs:key name="ugyfel_kulcs">
-            <xs:selector xpath="ugyfel"></xs:selector>
+            <xs:selector xpath="reszleg/ugyfel"></xs:selector>
             <xs:field xpath="@ukod"></xs:field>
         </xs:key>
         <xs:key name="dolgozo_kulcs">
-            <xs:selector xpath="dolgozo"></xs:selector>
+            <xs:selector xpath="reszleg/csapat/dolgozo"></xs:selector>
             <xs:field xpath="@dkod"></xs:field>
         </xs:key>
 
@@ -189,5 +196,13 @@
             <xs:selector xpath="csapat/dolgozo"></xs:selector>
             <xs:field xpath="@cskod"></xs:field>
         </xs:keyref>
+
+        <!-- Egyediség az 1:1 kapcsolat biztosítására 
+        Nincs szükség unique-ra: Az ugyfel és projekt elemek külön kulcsai (ukod és pkod) már egyedi azonosítóként funkcionálnak.
+         <xs:unique name="ugyfel_es_projekt_egyedi">
+            <xs:selector xpath="reszleg/ugyfel | reszleg/projekt"></xs:selector>
+            <xs:field xpath="@pkod"></xs:field>
+         </xs:unique>
+         -->
     </xs:element>
 </xs:schema>

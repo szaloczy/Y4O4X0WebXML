@@ -147,7 +147,7 @@
         <letszam>5</letszam>
         <elorehaladas>60</elorehaladas>
          <!--Dolgozok-->
-        <dolgozo dkod="d1">
+        <dolgozo dkod="d6">
             <fizetes>4000000</fizetes>
             <vegzettseg>Msc diploma</vegzettseg>
             <belepesiDatum>2015-05-12</belepesiDatum>
@@ -160,7 +160,7 @@
             </beosztas>
             <nev>Lakatos Tibor</nev>
         </dolgozo>
-        <dolgozo dkod="d2">
+        <dolgozo dkod="d7">
             <fizetes>3500000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2018-03-04</belepesiDatum>
@@ -173,7 +173,7 @@
             </beosztas>
             <nev>Kunhalasi Ágnes</nev>
         </dolgozo>
-        <dolgozo dkod="d3">
+        <dolgozo dkod="d8">
             <fizetes>2500000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2017-08-19</belepesiDatum>
@@ -191,7 +191,7 @@
         <vezeto>Nagy Zoltán</vezeto>
         <letszam>5</letszam>
         <elorehaladas>45</elorehaladas>
-        <dolgozo dkod="d4">
+        <dolgozo dkod="d9">
             <fizetes>3000000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2020-09-11</belepesiDatum>
@@ -248,7 +248,7 @@
         <letszam>3</letszam>
         <elorehaladas>80</elorehaladas>
         <!--Dolgozók-->
-        <dolgozo dkod="d1">
+        <dolgozo dkod="d10">
             <fizetes>5000000</fizetes>
             <vegzettseg>Msc diploma</vegzettseg>
             <belepesiDatum>2012-10-10</belepesiDatum>
@@ -261,7 +261,7 @@
             </beosztas>
             <nev>Juhász Péter</nev>
         </dolgozo>
-        <dolgozo dkod="d2">
+        <dolgozo dkod="d11">
             <fizetes>3500000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2015-05-22</belepesiDatum>
@@ -274,7 +274,7 @@
             </beosztas>
             <nev>Tabácsi János</nev>
         </dolgozo>
-        <dolgozo dkod="d3">
+        <dolgozo dkod="d12">
             <fizetes>3000000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2018-07-05</belepesiDatum>
@@ -292,7 +292,7 @@
         <vezeto>Varga Eszter</vezeto>
         <letszam>3</letszam>
         <elorehaladas>70</elorehaladas>
-        <dolgozo dkod="d4">
+        <dolgozo dkod="d13">
             <fizetes>2500000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
             <belepesiDatum>2019-11-14</belepesiDatum>
