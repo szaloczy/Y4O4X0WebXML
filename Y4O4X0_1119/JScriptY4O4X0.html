@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y4O4X0</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const datas =   fetch('/orarendY4O4X0.json') // A fájl neve például: data.json
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Hiba a JSON fájl betöltésekor.');
+    }
+    return response.json(); // JSON objektummá alakítás
+  })
+  .then((data) => {
+    console.log(data); // A beolvasott JSON tartalom
+  })
+  .catch((error) => {
+    console.error('Hiba történt:', error);
+  });
+
+  console.log(datas);
+  
+</script>
+</html>
