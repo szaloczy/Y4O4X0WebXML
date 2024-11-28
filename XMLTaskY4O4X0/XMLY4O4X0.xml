@@ -15,6 +15,7 @@
         <dolgozo dkod="d1">
             <fizetes>3000000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
+            <vegzettseg>Msc Diploma</vegzettseg>
             <belepesiDatum>2006-02-02</belepesiDatum>
             <beosztas bkod="cs1">
                 <munkaido>
@@ -163,6 +164,7 @@
         <dolgozo dkod="d7">
             <fizetes>3500000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
+            <vegzettseg>Szakmérnöki diploma</vegzettseg>
             <belepesiDatum>2018-03-04</belepesiDatum>
             <beosztas bkod="cs4">
                 <munkaido>
@@ -194,6 +196,7 @@
         <dolgozo dkod="d9">
             <fizetes>3000000</fizetes>
             <vegzettseg>Bsc diploma</vegzettseg>
+            <vegzettseg>Msc diploma</vegzettseg>
             <belepesiDatum>2020-09-11</belepesiDatum>
             <beosztas bkod="cs5">
                 <munkaido>
