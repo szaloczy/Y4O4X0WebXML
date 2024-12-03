@@ -80,30 +80,35 @@ public class DOMWriteY4O4X0 {
         appendElement(document, team, "elorehaladas", elorehaladas);
 
         // Dolgozók hozzáadása
-        addEmployee(document, team, "d1", "3000000", "Bsc diploma", "2006-02-02", "10:00:00", "18:00:00", "Szoftverfejlesztő", "Szabó Nórbert");
-        addEmployee(document, team, "d2", "200000", "Középfokú végzettség", "2010-01-21", "10:00:00", "18:00:00", "Tesztelő", "Illés János");
-        addEmployee(document, team, "d3", "300000", "Bsc diploma", "2000-03-03", "10:00:00", "18:00:00", "Tesztelő", "Fekete Csaba");
+        addEmployee(document, team, "d1", "3000000", new String[]{"Bsc diploma", "Msc diploma"}, "2006-02-02", "10:00:00", "18:00:00", "Szoftverfejlesztő", "Szabó Nórbert");
+        addEmployee(document, team, "d2", "200000", new String[]{"Bsc diploma", "Msc diploma"}, "2010-01-21", "10:00:00", "18:00:00", "Tesztelő", "Illés János");
+        addEmployee(document, team, "d3", "300000", new String[]{"Bsc diploma", "Msc diploma"}, "2000-03-03", "10:00:00", "18:00:00", "Tesztelő", "Fekete Csaba");
 
         parentElement.appendChild(team);
     }
 
     //Dolgozó Hozzáadása
-    private static void addEmployee(Document document, Element teamElement, String dskod, String fizetes, String vegzettseg, String szuletes, String munkaido_kezd, String munkaido_veg, String pozicio, String nev) {
+    private static void addEmployee(Document document, Element teamElement, String dskod, String fizetes, String[] vegzettsegek, String szuletes, String munkaido_kezd, String munkaido_veg, String pozicio, String nev) {
         Element employee = document.createElement("dolgozo");
         employee.setAttribute("dkod", dskod);
 
-        //gyerekelem hozzáfűzés
+        // Gyerekelem hozzáfűzés
         appendElement(document, employee, "fizetes", fizetes);
-        appendElement(document, employee, "vegzettseg", vegzettseg);
+
+        // Több végzettség hozzáfűzése
+        for (String vegzettseg : vegzettsegek) {
+            appendElement(document, employee, "vegzettseg", vegzettseg);
+        }
+
         appendElement(document, employee, "belepesiDatum", szuletes);
 
-        //gyerekelem hozzáfűzés
+        // Munkaidő elem hozzáfűzése
         Element workTime = document.createElement("munkaido");
         appendElement(document, workTime, "tol", munkaido_kezd);
         appendElement(document, workTime, "ig", munkaido_veg);
         employee.appendChild(workTime);
 
-        //gyerekelem hozzáfűzés
+        // Beosztás elem hozzáfűzése
         Element position = document.createElement("beosztas");
         position.setAttribute("bkod", "b1");  // Igazítsuk a tényleges logikához
         appendElement(document, position, "pozicio", pozicio);
@@ -113,6 +118,7 @@ public class DOMWriteY4O4X0 {
 
         teamElement.appendChild(employee);
     }
+
 
     //Projekt hozzáadása
     private static void addProject(Document document, Element department, String pskod, String rkod, String nev, String vezetok, String datum) {

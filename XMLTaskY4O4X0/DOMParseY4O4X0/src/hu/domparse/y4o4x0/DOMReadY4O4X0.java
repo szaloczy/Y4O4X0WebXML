@@ -169,9 +169,13 @@ public class DOMReadY4O4X0 {
         String fizetes = fizetesNode.getTextContent();
         System.out.println("Fizetés: " + fizetes);
 
-        Node vegzettsegNode = dolgozo.getElementsByTagName("vegzettseg").item(0);
-        String vegzettseg = vegzettsegNode.getTextContent();
-        System.out.println("Végzettség: " + vegzettseg);
+        NodeList vegzettsegNodes = dolgozo.getElementsByTagName("vegzettseg");
+        System.out.println("Végzettségek:");
+        for (int i = 0; i < vegzettsegNodes.getLength(); i++) {
+            Node vegzettsegNode = vegzettsegNodes.item(i);
+            String vegzettseg = vegzettsegNode.getTextContent();
+            System.out.println("- " + vegzettseg);
+        }
 
         Node belepesiDatumNode = dolgozo.getElementsByTagName("belepesiDatum").item(0);
         String belepesiDatum = belepesiDatumNode.getTextContent();
