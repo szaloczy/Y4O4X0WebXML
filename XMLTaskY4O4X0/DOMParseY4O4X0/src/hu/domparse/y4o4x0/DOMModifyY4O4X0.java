@@ -71,31 +71,39 @@ public class DOMModifyY4O4X0 {
 	private static void addNewProjectToMarketingDepartment(Document doc) {
 		// A "reszleg" elemek listájának lekérése
 		NodeList reszlegek = doc.getElementsByTagName("reszleg");
-		for(int i = 0; i < reszlegek.getLength(); i++) {
+		for (int i = 0; i < reszlegek.getLength(); i++) {
 			Element reszleg = (Element) reszlegek.item(i);
-			
-			if(reszleg.getAttribute("rkod").equals("r2")) {
+
+			if (reszleg.getAttribute("rkod").equals("r2")) {
+				// Új "projekt" létrehozása
 				Element ujProjekt = doc.createElement("projekt");
 				ujProjekt.setAttribute("pkod", "p10");
 				ujProjekt.setAttribute("rkod", "r2");
-                ujProjekt.setAttribute("ukod", "u6");
+				ujProjekt.setAttribute("ukod", "u6");
 
-                Element nev = doc.createElement("nev");
-                nev.setTextContent("XML beadandó készítés");
-                ujProjekt.appendChild(nev);
+				Element nev = doc.createElement("nev");
+				nev.setTextContent("XML beadandó készítés");
+				ujProjekt.appendChild(nev);
 
-                Element felelos = doc.createElement("felelos");
-                felelos.setTextContent("Szalóczy Krisztián");
-                ujProjekt.appendChild(felelos);
+				Element felelos = doc.createElement("felelos");
+				felelos.setTextContent("Szalóczy Krisztián");
+				ujProjekt.appendChild(felelos);
 
-                Element hatarido = doc.createElement("hatarido");
-                hatarido.setTextContent("2024-12-10");
-                ujProjekt.appendChild(hatarido);
+				Element hatarido = doc.createElement("hatarido");
+				hatarido.setTextContent("2024-12-10");
+				ujProjekt.appendChild(hatarido);
 
-                reszleg.appendChild(ujProjekt);
+				// Az utolsó "projekt" után helyezés
+				NodeList projektek = reszleg.getElementsByTagName("projekt");
+				if (projektek.getLength() > 0) {
+					Element utolsoProjekt = (Element) projektek.item(projektek.getLength() - 1);
+					reszleg.insertBefore(ujProjekt, utolsoProjekt.getNextSibling());
+				} else {
+					// Ha nincs más projekt, a reszleg gyökérhez adja
+					reszleg.appendChild(ujProjekt);
+				}
 			}
 		}
-		
 	}
 
 	//Módosított xml kiírása konzolra

@@ -10,6 +10,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 
 public class DOMWriteY4O4X0 {
 
@@ -40,6 +41,7 @@ public class DOMWriteY4O4X0 {
 
         // XML kiírása a konzolra
         printDocumentToConsole(document);
+        printToFile(document, "src/resources/XMLY4O4X01.xml");
     }
 
     private static void addDepartment(Document document, Element rootElement, String rkod, String nev, String emelet, String letszam) {
@@ -80,35 +82,30 @@ public class DOMWriteY4O4X0 {
         appendElement(document, team, "elorehaladas", elorehaladas);
 
         // Dolgozók hozzáadása
-        addEmployee(document, team, "d1", "3000000", new String[]{"Bsc diploma", "Msc diploma"}, "2006-02-02", "10:00:00", "18:00:00", "Szoftverfejlesztő", "Szabó Nórbert");
-        addEmployee(document, team, "d2", "200000", new String[]{"Bsc diploma", "Msc diploma"}, "2010-01-21", "10:00:00", "18:00:00", "Tesztelő", "Illés János");
-        addEmployee(document, team, "d3", "300000", new String[]{"Bsc diploma", "Msc diploma"}, "2000-03-03", "10:00:00", "18:00:00", "Tesztelő", "Fekete Csaba");
+        addEmployee(document, team, "d1", "3000000", "Bsc diploma", "2006-02-02", "10:00:00", "18:00:00", "Szoftverfejlesztő", "Szabó Nórbert");
+        addEmployee(document, team, "d2", "200000", "Középfokú végzettség", "2010-01-21", "10:00:00", "18:00:00", "Tesztelő", "Illés János");
+        addEmployee(document, team, "d3", "300000", "Bsc diploma", "2000-03-03", "10:00:00", "18:00:00", "Tesztelő", "Fekete Csaba");
 
         parentElement.appendChild(team);
     }
 
     //Dolgozó Hozzáadása
-    private static void addEmployee(Document document, Element teamElement, String dskod, String fizetes, String[] vegzettsegek, String szuletes, String munkaido_kezd, String munkaido_veg, String pozicio, String nev) {
+    private static void addEmployee(Document document, Element teamElement, String dskod, String fizetes, String vegzettseg, String szuletes, String munkaido_kezd, String munkaido_veg, String pozicio, String nev) {
         Element employee = document.createElement("dolgozo");
         employee.setAttribute("dkod", dskod);
 
-        // Gyerekelem hozzáfűzés
+        //gyerekelem hozzáfűzés
         appendElement(document, employee, "fizetes", fizetes);
-
-        // Több végzettség hozzáfűzése
-        for (String vegzettseg : vegzettsegek) {
-            appendElement(document, employee, "vegzettseg", vegzettseg);
-        }
-
+        appendElement(document, employee, "vegzettseg", vegzettseg);
         appendElement(document, employee, "belepesiDatum", szuletes);
 
-        // Munkaidő elem hozzáfűzése
+        //gyerekelem hozzáfűzés
         Element workTime = document.createElement("munkaido");
         appendElement(document, workTime, "tol", munkaido_kezd);
         appendElement(document, workTime, "ig", munkaido_veg);
         employee.appendChild(workTime);
 
-        // Beosztás elem hozzáfűzése
+        //gyerekelem hozzáfűzés
         Element position = document.createElement("beosztas");
         position.setAttribute("bkod", "b1");  // Igazítsuk a tényleges logikához
         appendElement(document, position, "pozicio", pozicio);
@@ -118,7 +115,6 @@ public class DOMWriteY4O4X0 {
 
         teamElement.appendChild(employee);
     }
-
 
     //Projekt hozzáadása
     private static void addProject(Document document, Element department, String pskod, String rkod, String nev, String vezetok, String datum) {
@@ -163,11 +159,26 @@ public class DOMWriteY4O4X0 {
 
     //Léterhozott dokumentum kiírása konzolra
     private static void printDocumentToConsole(Document document) throws Exception {
+        File outFile = new File("src/resources/XMLY4O4X01.xml");
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         DOMSource source = new DOMSource(document);
         StreamResult consoleResult = new StreamResult(System.out);
         transformer.transform(source, consoleResult);
+    }
+
+    // Létrehozott dokumentum kiírása fájlba
+    private static void printToFile(Document document, String filePath) throws Exception {
+        File outFile = new File(filePath);
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+        DOMSource source = new DOMSource(document);
+        StreamResult outputFile = new StreamResult(outFile);
+
+        transformer.transform(source, outputFile);
+        System.out.println("XML fájl sikeresen kiírva: " + outFile.getAbsolutePath());
     }
 }
